@@ -1,0 +1,53 @@
+
+#form-title{
+    margin: 30px;
+}
+
+#tel-input, #name-input, #email-input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea[type=message]{
+    width: 175%;
+    height: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left;
+    resize: none;
+}
+
+#btn {
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 5px;
+    
+}
+
+
+#btn:active {
+    background-color: #3e8e41;
+    transform: translateY(4px);
+  }
+
+/* Ta bort pilar för att öka värdet i number-input (funkar med scroll) */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+span{
+    font-style: italic;
+    margin-left: 5px;
+    font-size: 12px;
+}

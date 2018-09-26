@@ -1,0 +1,54 @@
+@media only screen and (max-width: 768px) {
+    *{
+        font-size:24px;
+    }
+
+    [class*="col-"]{
+        width: 100% !important;
+    }
+    textarea[type=message]{
+        width: 100% !important;
+    }
+
+    textarea[type=message]{
+        width: 100% !important;
+    }
+    .projectDiv{
+        width:90% !important; 
+        margin-left: 5% !important;
+        margin-right: 5% !important;
+    }
+
+    iframe{
+        height:4250px !important;
+    }
+    
+    .table-container{
+        overflow-x: auto !important;
+    }
+
+    .trend-tables{
+        width:100% !important;
+    }
+    
+    #slideshow{
+        width: 80% !important;
+    }
+
+    #main{
+        width:100% !important;
+    }
+
+    .personContainerDiv{
+        width:75%;
+        height: 75%;
+        margin: 12.5%;
+    }
+
+    span{
+        font-size: 14px !important;
+        font-style: italic;
+        margin-left: 5px;
+    }
+
+}

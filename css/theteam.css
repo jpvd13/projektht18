@@ -1,0 +1,65 @@
+div > .personContainerDiv{
+    width: 180px;
+    height: 250px;
+    margin: 4.16%;
+    float: left;
+}
+
+div > .personContainerDiv > a{
+    color: black;
+    text-decoration: none;
+    margin: auto;   
+}
+
+div > .profileImgDiv{
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    border: 2px solid white;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);   
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.trend-row > td > a{
+    color: black;
+
+}
+
+table {
+    width:60%;    
+    margin-left: 5%;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);
+}
+td {
+    width: 25%;
+    padding: 10px;
+}
+th{
+    text-align: left;
+    padding: 10px;
+    background-color: rgb(142, 163, 184);
+}
+
+
+tr > .trend-table-titles{
+   font-weight: bold;
+   text-align: left;
+}
+  
+tbody tr:nth-child(even){
+    background-color: rgb(164, 198, 255);
+  }
+tbody tr:nth-child(odd){
+    background-color: rgb(198, 225, 255);
+}
+
+.textAboutUs{
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);
+    margin-left: 5%;    
+}

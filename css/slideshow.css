@@ -1,0 +1,43 @@
+
+
+#slideshow { 
+    margin: 10px auto; 
+    position: relative; 
+    text-align: center;
+    width: 50%;
+
+}
+
+#slideshow > div { 
+    position: relative;    
+}
+
+#slideshow > div > img {
+  width: 100%;
+  height: auto;
+  border: 2px solid white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); 
+}
+#button {
+  text-align: center;
+}
+
+
+
+.slideControls{
+    font-style: bold;
+    text-decoration: none;
+    color: rgba(0, 183, 255, 0.342);
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#prevBtn{font-size: 40px}
+#nextBtn{font-size: 40px}
+
+#slideshow-container{
+    height: auto;
+    width: 100%;
+    position: relative;
+}
