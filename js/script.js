@@ -226,14 +226,14 @@ function contactForm() {
         </div>
 </div>
 
-<div id="err-modal" class ="modal">
-    <div class="modal-content">
+<div id="err-modal">
+    <div id="modal-content">
         <span id="close">&times;</span>
         <p id="message"></p>
     </div>
 </div>
 
-<div class="">
+
     <div id="msg" class="col-3 row">
         <label for="msg-input">Meddelande</label>
         <textarea type="message" id="msg-input" placeholder="Skriv ditt meddelande här..."></textarea>
@@ -243,11 +243,16 @@ function contactForm() {
         <input type="button" value="Skicka" id="btn">
     </div>
 
-</div>
+
+
 
 
 </form>
-</div>`)}
+
+</div>
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsjoxCuIm512iS1klcnwE0b0kyoP7cwV8&callback=myMap"></script>
+`)}
 
 
 function slideshow(){
