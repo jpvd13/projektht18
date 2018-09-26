@@ -1,12 +1,11 @@
 var imgNumber = 0;
-var path = ["images/slide1.jpg",
-  "images/slide2.jpg",
-  "images/slide3.jpg",
-  "images/slide4.jpg",
-  "images/slide5.jpg"];
+var path = ["images/animal-attack.jpg",
+  "images/animal-chill.jpg",
+  "images/animal-eyes.jpg",
+  ];
 var numberOfImg = path.length;
 var timer = null;
-var imgDescriptions = ["En sn&ouml;ig skog", "N&aring;gra n&auml;ckrosor", "Bl&aring; kullar", "En fin solnedg&aring;ng", "Klassikern"]
+var imgDescriptions = ["Scolding", "Chilling", "Close up"]
 
 function slide() {
   imgNumber = (imgNumber + 1) % path.length;
@@ -31,6 +30,7 @@ function previousImage() {
     imgNumber = numberOfImg - 1;
   }
   $("#imgSlideshow").attr('src', path[imgNumber]);
+  $("#imgDesc").empty().append(imgDescriptions[imgNumber]);
   return false;
 }
 
@@ -40,5 +40,6 @@ function nextImage() {
     imgNumber = 0;
   }
   $("#imgSlideshow").attr('src', path[imgNumber]);
+  $("#imgDesc").empty().append(imgDescriptions[imgNumber]);
   return false;
 }

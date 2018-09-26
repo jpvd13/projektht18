@@ -6,15 +6,17 @@
     text-align: center;
     width: 50%;
 
+
 }
 
 #slideshow > div { 
-    position: relative;    
+    position: relative; 
+      
 }
 
 #slideshow > div > img {
   width: 100%;
-  height: auto;
+  height: 100%;
   border: 2px solid white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); 
 }
@@ -40,4 +42,13 @@
     height: auto;
     width: 100%;
     position: relative;
+}
+
+.indexText {
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);
+    position: relative;
+    margin-left: 20%;
+    margin-top: 1%;
+    margin-right: 20%;
 }

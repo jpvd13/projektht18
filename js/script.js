@@ -71,8 +71,7 @@ function theTeam() {
     $('#teamref').attr('onclick', '');
 
     $('#iframe-div').empty().append(`
-    <div class="col-6"></div>
-    <div class="col-12 viContainer">
+        <div class="col-12 viContainer">
         <h2>Vilka är vi?</h2>
 
         <div class="personContainerDiv">
@@ -105,7 +104,7 @@ function theTeam() {
         </div>
     </div>
 
-    <div class="col-6 textAboutUs">
+    <div class="textAboutUs col-5">
         <h2>Mellan Sarek och Padjelanta </h2>
         <p> Padjelanta är det höga landet som är vackert och mjukt. Sarek är brutalt och alpint, bäst därför att
             balansera på gränsen. Padjelanta ligger i norra Lappland med Sarek i öster och Sulitelma i väster. Om vi
@@ -227,6 +226,12 @@ function contactForm() {
         </div>
 </div>
 
+<div id="err-modal" class ="modal">
+    <div class="modal-content">
+        <span id="close">&times;</span>
+        <p id="message"></p>
+    </div>
+</div>
 
 <div class="">
     <div id="msg" class="col-3 row">
@@ -235,7 +240,7 @@ function contactForm() {
        <span class="hidden" id="err-msg-msg" style="color:red">
                 Vänligen lämna ett meddelande</span>
 
-        <input type="button" value="Skicka" id="btn" onclick="test()">
+        <input type="button" value="Skicka" id="btn">
     </div>
 
 </div>
@@ -255,10 +260,24 @@ function slideshow(){
 
     $('#teamref').attr('onclick', 'theTeam()');
 
-    $('#iframe-div').css('height', '800px');
+
     setTimer();
 
     $('#iframe-div').empty().append(`
+
+    <div class="indexText">
+    <h2>Välkommen till The Pack's Portfolio </h2>
+    <p> <b>The Law for the Wolves</b>
+
+    this is the law of the jungle, as old and as true as the sky,
+    And the wolf that shall keep it may prosper, but the wolf that shall break it must die.	
+    
+    As the creeper that girdles the tree trunk, the law runneth forward and back;
+    <b>For the strength of the pack is the wolf, and the strength of the wolf is the pack.</b>	
+    
+   
+    </p> </div>
+
     <div id="slideshow-container">
     <div id="slideshow">
         <div>
@@ -267,8 +286,8 @@ function slideshow(){
                         <a href="#" id="startCycle" class="slideControls" onclick="setTimer()">&#x25B6;/&#10074;&#10074;</a>
                         <a href="#" id="nextBtn" class="slideControls" onclick="nextImage()">&gt;</a>
                       </div>
-              <img name="slide" id="imgSlideshow" src="images/slide1.jpg">
-              <label id="imgDesc">En sn&ouml;ig skog</label>
+              <img name="slide" id="imgSlideshow" src="images/animal-attack.jpg">
+              <label id="imgDesc">Scolding</label>
              
         </div>
     </div> 
@@ -370,3 +389,25 @@ function personalPageJohan(){
 </div> `
 
 )}
+
+
+function headSlide(){
+
+    setTimer();
+
+    $('#head').empty().append(`
+    <div id="slideshow-container">
+    <div id="slideshow">
+        <div>
+                <div id="button" class="col-12">
+                        <a href="#" id="prevBtn" class="slideControls" onclick="previousImage()">&lt;</a>
+                        <a href="#" id="startCycle" class="slideControls" onclick="setTimer()">&#x25B6;/&#10074;&#10074;</a>
+                        <a href="#" id="nextBtn" class="slideControls" onclick="nextImage()">&gt;</a>
+                      </div>
+              <img name="slide" id="imgSlideshow" src="images/slide1.jpg">
+              <label id="imgDesc">En sn&ouml;ig skog</label>
+             
+        </div>
+    </div> 
+    </div>   `
+    )}
