@@ -19,6 +19,7 @@ larger than 1200px (large devices)
         margin-bottom: 15%;
         
     }
+}
 
     /* Enheter över 992px bredd kommer visas så man ser bodyn medan på enheter under 992px bredd kommer #main täcka hela skärmen. */
 @media only screen and (max-width: 992px){
@@ -120,28 +121,28 @@ larger than 1200px (large devices)
 
     /* "Responsiva element i "Vilka är vi?" */
 
-    #leftSide{
+#leftSide{
         width: 100% !important;  
     }
     
-    #rightSide{
+#rightSide{
         width: 100% !important;        
     }
 
-    div > .personContainerDiv{
+div > .personContainerDiv{
         width: 100% !important;
     }
 
-    .profileImgDiv {
+.profileImgDiv {
         object-fit: none !important;        
     }
     
     
-    .personInfo {
+.personInfo {
         font-size: 10px !important;
     }
 
-    .personText{
+.personText{
         width: 100% !important;
         display: block !important;
         float: left !important;
@@ -149,22 +150,21 @@ larger than 1200px (large devices)
         padding-top: 0 !important;
         margin-bottom: 15%;
     }
-    div > #table-mother{
+div > #table-mother{
         padding: 0px !important;
         
     }
 
-    div > .table-container{
+div > .table-container{
         overflow-x: auto !important;
         width: 100%;
         padding: 5%;
     }
 
-    .trend-tables{
+.trend-tables{
         width:100% !important;
     }
 
-    
-
-   /**/
 }
+
+
