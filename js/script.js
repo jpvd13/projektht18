@@ -203,7 +203,7 @@ function contactForm() {
 
     $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
 
-    $('#iframe-div').empty().append(`<div id="form">
+    $('#iframe-div').empty().append(`
 
     <h1 id="form-title">Kontakta oss<hr/></h1>
     
@@ -245,19 +245,15 @@ function contactForm() {
 <div id="msg" class="col-3 row">
 <label for="msg-input">Meddelande</label>
 <textarea type="message" id="msg-input" placeholder="Skriv ditt meddelande här..."></textarea>
+<input type="button" value="Skicka" id="btn">
 <span class="hidden" id="err-msg-msg" style="color:red">
     Vänligen lämna ett meddelande</span>
 
-<input type="button" value="Skicka" id="btn">
+
 </div>
 
 
     <div id="map" class="col-6"></div>
-</div>
-
-
-
-<div id="map" class="col-6"></div>
 </div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsjoxCuIm512iS1klcnwE0b0kyoP7cwV8&callback=myMap"></script>
@@ -500,7 +496,7 @@ function goResponsive() {
     } else {
         elem.className = "navbar";
     }
-    console.log('bajs');
+    
 }
 
 $( document ).ready(function() {
