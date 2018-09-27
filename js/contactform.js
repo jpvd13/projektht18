@@ -40,7 +40,7 @@ function whenLoaded() {
 
   //Realtime regex check f�r namn
   $('#name-input').on('keypress keydown keyup focus', function () {
-    var validation = /^([A-Za-zåäö ]|Å|Ä|Ö){3,}$/g;
+    var validation = /^([A-Za-zåäöé]\s?|Å|Ä|Ö){3,}$/g;
     var name = $(this).val();
     var validationResult = validation.test(name).toString();
 
@@ -92,7 +92,7 @@ function whenLoaded() {
     if (nameCheck === true && telCheck === true && msgCheck === true && emailCheck === true) {
 
       $('#msg-input').val('');
-
+      $('#modal-content').css('background-color', 'lightgreen');
       $('#err-modal').css('display', 'block');
       $('#message').empty().append('Meddelande skickat!');
        
@@ -100,10 +100,10 @@ function whenLoaded() {
           $('#err-modal').css('display', 'none');
         })
 
-        errorMessage('false', "-msg");
-        errorMessage('false', "-name");
-        errorMessage('false', "-tel");
-        errorMessage('false', "-email");
+        errorMessage(nameBoolean, '-name');
+        errorMessage(telBoolean, '-tel');
+        errorMessage(emailBoolean, '-email'); 
+        errorMessage('false', '-msg'); 
         $('#err-msg-name, #err-msg-email, #err-msg-tel, #err-msg-msg').addClass('hidden');
         localStorage.setItem("name-boolean", "true");
         localStorage.setItem("email-boolean", "true");
@@ -111,6 +111,7 @@ function whenLoaded() {
       
      } else {
 
+      $('#modal-content').css('background-color', 'lightcoral');
       $('#err-modal').css('display', 'block');
       $('#message').empty().append('Formuläret är inte korrekt ifyllt, försök igen.');
 

@@ -518,6 +518,7 @@ function personalPageJonte() {
 function personalPageJohan() {
     $('#iframe-div').empty().append(`
     <div class="card">
+
     <img src= "images/slide5.jpg" alt="Johan" style="width:100%">
     <h1>Pontus Törn</h1>
 
