@@ -30,6 +30,10 @@ img{
     object-fit: cover;
 }
 
+div > .table-mother{
+    float: left;
+}
+
 .trend-row > td > a{
     color: black;
 
@@ -37,7 +41,6 @@ img{
 
 table {
     width:60%;    
-    margin-left: 5%;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);
 }
 td {
@@ -69,11 +72,6 @@ tbody tr:nth-child(odd){
     margin-right: 5%;
 }
 
-h3{
-    padding-left: 5%;
-}
 
-#titel{
-    padding-left: 15px;
-}
+
 
