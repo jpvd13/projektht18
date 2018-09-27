@@ -12,6 +12,7 @@ function portfolio() {
     <div class="projectDiv">
     
         <div class="projectImg">
+
             <img name="project1" src="images/project1.jpg" alt="">
             <a href="https://www.freepik.com/free-vector/circular-wave-logo-template_843660.htm" target="_blank">
                 <div class="tooltip" href="#">
@@ -205,8 +206,6 @@ function contactForm() {
     $('#iframe-div').empty().append(`<div id="form">
 
     <h1 id="form-title">Kontakta oss<hr/></h1>
-=======
-    <h1 id="form-title">Kontakta oss<hr/></h1>
     
 
             <div id="name" class="col-4 ">
@@ -217,50 +216,53 @@ function contactForm() {
             </div>
 
 
-            <div id="email" class="col-4 ">
-                <label for="email-input">Email</label>
-                <input type="text" id="email-input" placeholder="Skriv din email här...">
-                <span class="hidden" id="err-msg-email" style="color:red">
-                        Vänligen ange en korrekt Email</span>
-            </div>
 
-
-            <div id="tel" class="col-4 ">
-                <label for="tel-input">Mobiltelefonnummer</label>
-                <input type="text" id="tel-input" placeholder="Skriv ditt telefonnummer här...">
-                <span class="hidden" id="err-msg-tel" style="color:red">
-                        Vänligen ange ett korrekt mobiltelefonnummer</span>
-            </div>
-        
-
-
-<div id="err-modal">
-    <div id="modal-content">
-        <span id="close">&times;</span>
-        <p id="message"></p>
-    </div>
+<div id="email" class="col-4 ">
+    <label for="email-input">Email</label>
+    <input type="text" id="email-input" placeholder="Skriv din email här...">
+    <span class="hidden" id="err-msg-email" style="color:red">
+            Vänligen ange en korrekt Email</span>
 </div>
 
 
-    <div id="msg" class="col-3 row">
-        <label for="msg-input">Meddelande</label>
-        <textarea type="message" id="msg-input" placeholder="Skriv ditt meddelande här..."></textarea>
-       <span class="hidden" id="err-msg-msg" style="color:red">
-                Vänligen lämna ett meddelande</span>
 
-        <input type="button" value="Skicka" id="btn">
-    </div>
+<div id="tel" class="col-4 ">
+    <label for="tel-input">Mobiltelefonnummer</label>
+    <input type="text" id="tel-input" placeholder="Skriv ditt telefonnummer här...">
+    <span class="hidden" id="err-msg-tel" style="color:red">
+            Vänligen ange ett korrekt mobiltelefonnummer</span>
+</div>
 
 
+<div id="err-modal">
+<div id="modal-content">
+<span id="close">&times;</span>
+<p id="message"></p>
+</div>
+</div>
+
+
+<div id="msg" class="col-3 row">
+<label for="msg-input">Meddelande</label>
+<textarea type="message" id="msg-input" placeholder="Skriv ditt meddelande här..."></textarea>
+<span class="hidden" id="err-msg-msg" style="color:red">
+    Vänligen lämna ett meddelande</span>
+
+<input type="button" value="Skicka" id="btn">
+</div>
 
 
     <div id="map" class="col-6"></div>
 </div>
 
 
+
+<div id="map" class="col-6"></div>
+</div>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsjoxCuIm512iS1klcnwE0b0kyoP7cwV8&callback=myMap"></script>
 `
-    )
+ )
 }
 
 function home() {
