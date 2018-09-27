@@ -505,14 +505,17 @@ function personalPageJonte() {
 </div>
 <div class="card2">
         <img src="images/aboutme.png" alt="aboutme" style="width:100%">
-        <h1>Jonathan Olsson</h1>
+        <h1>Jonathan Olsson</h1>`
 
     )
 }
 
 function personalPageJohan() {
 
-    $('#iframe-div').empty().append(<div class="card">
+
+    $('#iframe-div').empty().append(`
+    <div class="card">
+
     <img src= "images/slide5.jpg" alt="Johan" style="width:100%">
     <h1>Pontus Törn</h1>
 

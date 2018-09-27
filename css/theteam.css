@@ -35,8 +35,10 @@
 }
 div > .personText{
     width: 50%;
-    float: right;
+    display: inline-block;
+    vertical-align: top;
     padding-top: 12.5%;
+    margin-left: 5%;
 }
 div > .profileImgDiv{
     width: 180px;
@@ -44,7 +46,8 @@ div > .profileImgDiv{
     border-radius: 10px;
     border: 2px solid white;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);   
-    float: left;
+
+    display: inline-block;
 }
 
 img{
