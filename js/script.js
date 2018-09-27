@@ -75,18 +75,20 @@ function theTeam() {
 
     $('#iframe-div').empty().append(`
     <h1>Vilka är vi?<hr/></h1>
-        <div class="col-12">    
-
-        <div class="personContainerDiv">
-            <div id="pontus" class="profileImgDiv">
+    <div id="theTeam-mother"> 
+        <div id="leftSide">
+        <div class="personContainerDiv"> 
+           <div id="pontus" class="profileImgDiv">
                 <a href="#" onClick="personalPagePontus()">
                     <img src="images/pontus.jpg" alt="">
                 </a>
             </div>
-            <br/><a href="#" onClick="personalPagePontus()">Pontus Törn </a> <hr/>
+            <div class="personText"> 
             <p class="personInfo">
+                <a href="#" onClick="personalPagePontus()">Pontus Törn </a> <hr/>
                 +4673123456 <br/>
                 pontustorn@gmail.com</p>
+            </div>           
         </div>
 
         <div class="personContainerDiv">
@@ -95,10 +97,12 @@ function theTeam() {
                     <img src="images/jonte.jpg" alt="">
                 </a>
             </div>
-            <br/><a class="namn" href="#" onClick="personalPageJonte()"> Jonathan Olsson</a> <hr/>
+            <div class="personText"> 
             <p class="personInfo">
+                <a class="namn" href="#" onClick="personalPageJonte()"> Jonathan Olsson</a> <hr/>
                 +4673123456 <br/>
                 pontustorn@gmail.com</p>
+            </div>
         </div>
 
         <div class="personContainerDiv">
@@ -108,16 +112,17 @@ function theTeam() {
                 </a>
             </div>
 
-            <br/><a href="#" onClick="personalPageJohan()"> Johan Dalén</a><hr/>
+            <div class="personText"> 
             <p class="personInfo">
+                <a href="#" onClick="personalPageJohan()"> Johan Dalén</a><hr/>
                 +4670689288 <br/>
                 xjodal22@gmail.com</p>
-
+            </div>
         </div>
-    </div>
+        </div>
 
-    <div class="textAboutUs col-6">
-        <h2>Mellan Sarek och Padjelanta </h2>
+    <div id="rightSide">
+        <h2>Lite kort om oss</h2>
         <p> Padjelanta är det höga landet som är vackert och mjukt. Sarek är brutalt och alpint, bäst därför att
             balansera på gränsen. Padjelanta ligger i norra Lappland med Sarek i öster och Sulitelma i väster. Om vi
             börjar från norr så stiger Akka upp i ett fantastiskt majestät och gör skäl för namnet - Lapplands
@@ -128,7 +133,7 @@ function theTeam() {
             branter. Det är högt och imponerande, och med den stora forsens brus är detta sinnebilden av Lappland -
             höga bergen, brusande forsar och snötäckta bergssidor.
         </p>
-       
+        </div>
     </div>
     <div id="table-mother" class="col-12">
     <h1> Just nu fördjupar vi oss i </h1>
