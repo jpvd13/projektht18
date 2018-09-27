@@ -102,6 +102,7 @@ span{
 }
 
 #map {
-    height: 500px;
-    border: 2px solid red;
+    height: 300px;
+    margin-left: 20%;
+    
 }
