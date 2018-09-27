@@ -1,70 +1,41 @@
-@media only screen and (max-width: 417px) {
+/* Enligt https://www.websitedimensions.com/:
+You don’t need to write mediaqueries for every possible screen resolution. To keep things simple you could target four groups:
 
-    *{
-        font-size:16px;
-        box-shadow: none !important;
+smaller than or equal to 768 px (smartphones)
+larger than 768 px (small devices, tablets)
+larger than 992 px (medium devices)
+larger than 1200px (large devices)
 
+*/
+
+/* 1440px var en breakpoint där content la sig olägligt så lade till denna */
+@media only screen and (max-width: 1440px) {
+    .personText{
+        width: 100% !important;
+        display: block !important;
+        float: left !important;
+        margin-left: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 15%;
+        
+    }
+
+    /* Enheter över 992px bredd kommer visas så man ser bodyn medan på enheter under 992px bredd kommer #main täcka hela skärmen. */
+@media only screen and (max-width: 992px){
+    body{
+        width: 100% !important;
+        margin: 0% !important;
     }
 
     #main{
-        width:100% !important;
-    }
-
-    [class*="col-"]{
-        width: 90% !important;
-        margin-left: 5% !important;
-        margin-right: 5% !important;
-    }
-    textarea[type=message]{
         width: 100% !important;
     }
-
-    textarea[type=message]{
-        width: 100% !important;
-    }
-
-    .projectDiv{
-        width:90% !important; 
-        margin-left: 5% !important;
-        margin-right: 5% !important;
-    }
-
-    #navicon{
-        float: right;
-        margin-top: 5%;
-        margin-right: 5%;
-        visibility: visible !important;
-    }
     
+}
+/* Den bredaste mobilen idag ser ut att vara Nexus 3 på 600px så där bryter vi för när navbaren ska bli till en ikon */
+@media only screen and (max-width: 600px) {
     
-    
-    
-    #slideshow{
-        width: 90% !important;
-    }
-
-    span{
-        font-size: 14px !important;
-        font-style: italic;
-        margin-left: 5px;
-    }
-
-    .modal-content{
-        width: 90% !important;
-    }
-
-    .indexText {
-        width: 90% !important;
-        margin: 5% !important;
-        padding: 10px; 
-        font-size: 16px !important;
-    } 
-
-    .nav-list > a {
-        font-size: 20px !important;
-        padding-right: 9px;
-    }   
-
+    /* responsiv navigering */
     .navbar a:not(:first-child){
         display: none;
     }
@@ -87,6 +58,66 @@
       display: block;
       text-align: left;
     }
+}
+
+/* Surfplattor och mobiler påverkas av koden nedanför */
+@media only screen and (max-width: 768px) {
+
+    *{
+        font-size:16px;
+        box-shadow: none !important;
+
+    }
+
+    [class*="col-"]{
+        width: 90% !important;
+        margin-left: 5% !important;
+        margin-right: 5% !important;
+    }
+    textarea[type=message]{
+        width: 100% !important;
+    }
+
+    textarea[type=message]{
+        width: 100% !important;
+    }
+
+    .projectDiv{
+        width:90% !important; 
+        margin-left: 5% !important;
+        margin-right: 5% !important;
+    } 
+
+    #slideshow{
+        width: 90% !important;
+    }
+
+    span{
+        font-size: 14px !important;
+        font-style: italic;
+        margin-left: 5px;
+    }
+
+    .modal-content{
+        width: 90% !important;
+    }
+
+    .indexText {
+        width: 90% !important;
+        margin: 5% !important;
+        padding: 10px; 
+        font-size: 16px !important;
+    } 
+/* Tror denna är borttagen
+    .nav-list > a {
+        font-size: 20px !important;
+        padding-right: 9px;
+    }   
+*/
+
+
+    
+
     /* "Responsiva element i "Vilka är vi?" */
 
     #leftSide{
@@ -104,23 +135,36 @@
     .profileImgDiv {
         object-fit: none !important;        
     }
-    div > .personText {
-        width: 48% !important;
-        float: right;
-        padding-top: 12.5%;
-    }
+    
+    
     .personInfo {
         font-size: 10px !important;
     }
 
-    .table-container{
+    .personText{
+        width: 100% !important;
+        display: block !important;
+        float: left !important;
+        margin-left: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 15%;
+    }
+    div > #table-mother{
+        padding: 0px !important;
+        
+    }
+
+    div > .table-container{
         overflow-x: auto !important;
         width: 100%;
+        padding: 5%;
     }
 
     .trend-tables{
         width:100% !important;
     }
+
+    
 
    /**/
 }

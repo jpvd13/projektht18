@@ -25,6 +25,7 @@
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
+
 #index-body{
     background-image: url("../images/sky1.jpg");
     background-repeat: no-repeat;
@@ -69,7 +70,7 @@ h1 {
     background-color: #333;
   }
   
-  .navbar a {
+.navbar a {
     float: left;
     display: block;
     color: #f2f2f2;
@@ -77,16 +78,16 @@ h1 {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-  }
+}
   
-  .active {
+.active {
     background-color: rgb(11, 174, 219);
     color: white;
-  }
+}
   
-  .navbar .nav-icon {
+.navbar .nav-icon {
     display: none;
-  }
+}
   
   
 
