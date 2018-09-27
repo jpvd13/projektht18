@@ -199,9 +199,7 @@ function contactForm() {
 
     $('#iframe-div').empty().append(`<div id="form">
     <h1 id="form-title">Kontakta oss</h1>
-    <form>
 
-        <div class="row">
             <div id="name" class="col-4 ">
                 <label for="name-input">Namn</label>
                 <input type="text" id="name-input" placeholder="Skriv ditt namn här...">
@@ -224,8 +222,8 @@ function contactForm() {
                 <span class="hidden" id="err-msg-tel" style="color:red">
                         Vänligen ange ett korrekt mobiltelefonnummer</span>
             </div>
-        </div>
-</div>
+        
+
 
 <div id="err-modal">
     <div id="modal-content">
@@ -247,11 +245,10 @@ function contactForm() {
 
 
 
-
-</form>
-
+    <div id="map" class="col-6"></div>
 </div>
-<div id="map"></div>
+
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsjoxCuIm512iS1klcnwE0b0kyoP7cwV8&callback=myMap"></script>
 `)}
 
