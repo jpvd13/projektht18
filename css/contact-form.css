@@ -1,8 +1,13 @@
 #form {
+    
     height:100%;
 }
 #form-title{
     margin: 30px;
+}
+
+form {
+    height:100%;
 }
 
 #tel-input, #name-input, #email-input{

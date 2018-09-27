@@ -8,9 +8,11 @@ function portfolio() {
 
 
     $('#iframe-div').empty().append(`
-    <h1>Portfolio<hr/></h1>
+   <h1>Portfolio<hr/></h1>
     <div class="projectDiv">
-            <div class="projectImg">
+    
+        <div class="projectImg">
+
             <img name="project1" src="images/project1.jpg" alt="">
             <a href="https://www.freepik.com/free-vector/circular-wave-logo-template_843660.htm" target="_blank">
                 <div class="tooltip" href="#">
@@ -202,14 +204,17 @@ function contactForm() {
     $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
 
     $('#iframe-div').empty().append(`<div id="form">
+
     <h1 id="form-title">Kontakta oss<hr/></h1>
- 
-    <div id="name" class="col-4 ">
-    <label for="name-input">Namn</label>
-    <input type="text" id="name-input" placeholder="Skriv ditt namn här...">
-    <span class="hidden" id="err-msg-name" style="color:red">
-            Vänligen ange ett korrekt namn</span>
-</div>
+    
+
+            <div id="name" class="col-4 ">
+                <label for="name-input">Namn</label>
+                <input type="text" id="name-input" placeholder="Skriv ditt namn här...">
+                <span class="hidden" id="err-msg-name" style="color:red">
+                        Vänligen ange ett korrekt namn</span>
+            </div>
+
 
 
 <div id="email" class="col-4 ">
@@ -220,13 +225,13 @@ function contactForm() {
 </div>
 
 
+
 <div id="tel" class="col-4 ">
     <label for="tel-input">Mobiltelefonnummer</label>
     <input type="text" id="tel-input" placeholder="Skriv ditt telefonnummer här...">
     <span class="hidden" id="err-msg-tel" style="color:red">
             Vänligen ange ett korrekt mobiltelefonnummer</span>
 </div>
-
 
 
 <div id="err-modal">
@@ -246,6 +251,9 @@ function contactForm() {
 <input type="button" value="Skicka" id="btn">
 </div>
 
+
+    <div id="map" class="col-6"></div>
+</div>
 
 
 
