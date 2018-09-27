@@ -76,30 +76,30 @@ function theTeam() {
 
         <div class="personContainerDiv">
             <div id="pontus" class="profileImgDiv">
-                <a onClick="personalPagePontus()">
+                <a href="#" onClick="personalPagePontus()">
                     <img src="images/grass.jpg" alt="">
                 </a>
             </div>
-            <a onClick="personalPagePontus()">Pontus Törn</a>
+            <a href="#" onClick="personalPagePontus()">Pontus Törn</a>
         </div>
 
         <div class="personContainerDiv">
             <div id="jonte" class="profileImgDiv">
-                <a onClick="personalPageJonte()">
+                <a href="#" onClick="personalPageJonte()">
                     <img src="images/jonte.jpg" alt="">
                 </a>
             </div>
-            <a onClick="personalPageJonte()"> Jonathan Olsson</a>
+            <a href="#" onClick="personalPageJonte()"> Jonathan Olsson</a>
         </div>
 
         <div class="personContainerDiv">
             <div id="johan" class="profileImgDiv">
-                <a onClick="personalPageJohan()">
+                <a href="#" onClick="personalPageJohan()">
                     <img src="images/slide5.jpg" alt="">
                 </a>
             </div>
 
-            <a onClick="personalPageJohan()"> Johan Dalén</a>
+            <a href="#" onClick="personalPageJohan()"> Johan Dalén</a>
 
         </div>
     </div>
@@ -118,12 +118,13 @@ function theTeam() {
         </p>
        
     </div>
+    
 
+    
     <div class="table-container col-12 row">
-
+    <h2> Vi fördjupar oss just nu inom: </h2>
         <table id="jsTrends" class="trend-tables">
-            <tr>
-                <h2> Vi fördjupar oss just nu inom: </h2>
+            <tr>              
                 <h3>Trendande JavaScript-bibliotek</h3>
             </tr>
             <tr class="trend-table-titles">
@@ -286,19 +287,24 @@ function slideshow(){
     <div id="slideshow-container">
     <div id="slideshow">
         <div>
-                <div id="button" class="col-12">
+               
+              <img name="slide" id="imgSlideshow" src="images/animal-attack.jpg">
+              <label id="imgDesc">Scolding</label>
+              <div id="button" class="col-12">
                         <a href="#" id="prevBtn" class="slideControls" onclick="previousImage()">&lt;</a>
                         <a href="#" id="startCycle" class="slideControls" onclick="setTimer()">&#x25B6;/&#10074;&#10074;</a>
                         <a href="#" id="nextBtn" class="slideControls" onclick="nextImage()">&gt;</a>
                       </div>
-              <img name="slide" id="imgSlideshow" src="images/animal-attack.jpg">
-              <label id="imgDesc">Scolding</label>
-             
         </div>
     </div> 
     </div>   `
 
 )}
+
+function transform(x) {
+    console.log(x);
+    x.classList.toggle("transform");
+}
 
 
 function personalPagePontus(){

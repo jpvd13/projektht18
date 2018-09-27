@@ -1,6 +1,7 @@
 @media only screen and (max-width: 768px) {
     *{
         font-size:24px;
+
     }
 
     [class*="col-"]{
@@ -15,10 +16,46 @@
     textarea[type=message]{
         width: 100% !important;
     }
+
     .projectDiv{
         width:90% !important; 
         margin-left: 5% !important;
         margin-right: 5% !important;
+    }
+
+    #navicon{
+        float: right;
+        margin-top: 5%;
+        margin-right: 5%;
+        visibility: visible !important;
+    }
+    
+    .bar1, .bar2, .bar3 {
+        
+        width: 36px;
+        height: 5px;
+        transition: 0.2s;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 6px 0;
+        border-radius: 2px;
+        visibility: visible !important;
+    
+    }
+    
+    .transform .bar1{
+        
+        transform: rotate(-45deg) translate(-9px, 6px);
+        background-color: white;
+    }
+    
+    .transform .bar2{
+       opacity: 0;
+    }
+    
+    .transform .bar3{
+       
+        transform: rotate(45deg) translate(-8px, -8px);
+        background-color: white;
     }
 
     iframe{
@@ -64,12 +101,16 @@
         padding-right: 9px;
     }
 
-    .personContainerDiv {
-        margin-left: 17.5% !important;
-       
-    }
+  
 
     .viContainer > h2 {
         text-align: center !important;
     }
+
+    div > .personContainerDiv{
+        width: 270px !important;
+        height: 350px !important;
+    }
+
+
 }
