@@ -9,8 +9,7 @@ function portfolio() {
 
     $('#iframe-div').empty().append(`
    <h1>Portfolio<hr/></h1>
-    <div class="projectDiv">
-    
+    <div class="projectDiv">    
         <div class="projectImg">
             <img name="project1" src="images/project1.jpg" alt="">
             <a href="https://www.freepik.com/free-vector/circular-wave-logo-template_843660.htm" target="_blank">
@@ -75,8 +74,7 @@ function theTeam() {
 
     $('#iframe-div').empty().append(`
     <h1>Vilka är vi?<hr/></h1>
-        <div class="col-12">
-        
+        <div class="col-12">    
 
         <div class="personContainerDiv">
             <div id="pontus" class="profileImgDiv">
@@ -84,7 +82,10 @@ function theTeam() {
                     <img src="images/grass.jpg" alt="">
                 </a>
             </div>
-            <a href="#" onClick="personalPagePontus()">Pontus Törn</a>
+            <br/><a href="#" onClick="personalPagePontus()">Pontus Törn </a> <hr/>
+            <p class="personInfo">
+                +4673123456 <br/>
+                pontustorn@gmail.com</p>
         </div>
 
         <div class="personContainerDiv">
@@ -93,7 +94,10 @@ function theTeam() {
                     <img src="images/jonte.jpg" alt="">
                 </a>
             </div>
-            <a href="#" onClick="personalPageJonte()"> Jonathan Olsson</a>
+            <br/><a class="namn" href="#" onClick="personalPageJonte()"> Jonathan Olsson</a> <hr/>
+            <p class="personInfo">
+                +4673123456 <br/>
+                pontustorn@gmail.com</p>
         </div>
 
         <div class="personContainerDiv">
@@ -103,12 +107,15 @@ function theTeam() {
                 </a>
             </div>
 
-            <a href="#" onClick="personalPageJohan()"> Johan Dalén</a>
+            <br/><a href="#" onClick="personalPageJohan()"> Johan Dalén</a><hr/>
+            <p class="personInfo">
+                +4670689288 <br/>
+                xjodal22@gmail.com</p>
 
         </div>
     </div>
 
-    <div class="textAboutUs col-5">
+    <div class="textAboutUs col-6">
         <h2>Mellan Sarek och Padjelanta </h2>
         <p> Padjelanta är det höga landet som är vackert och mjukt. Sarek är brutalt och alpint, bäst därför att
             balansera på gränsen. Padjelanta ligger i norra Lappland med Sarek i öster och Sulitelma i väster. Om vi
@@ -124,10 +131,11 @@ function theTeam() {
     </div>
     
 
-    
+    <div class="table-mother" col-12">
+    <h1> Vi fördjupar oss just nu inom: </h1><hr/>
     <div class="table-container col-12 row">
-    <h2> Vi fördjupar oss just nu inom: </h2>
-        <table id="jsTrends" class="trend-tables">
+    
+       <table id="jsTrends" class="trend-tables">
             <tr>              
                 <h3>Trendande JavaScript-bibliotek</h3>
             </tr>
@@ -151,6 +159,7 @@ function theTeam() {
                 <th>Stars denna vecka</th>
             </tr>
         </table>
+    </div>
     </div>`)
     var jsTrends = [];
     var cssTrends = [];
