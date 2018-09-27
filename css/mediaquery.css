@@ -38,6 +38,7 @@
     
     .table-container{
         overflow-x: auto !important;
+        width: 100%;
     }
 
     .trend-tables{

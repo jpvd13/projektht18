@@ -129,11 +129,9 @@ function theTeam() {
         </p>
        
     </div>
-    
-
-    <div class="table-mother" col-12">
-    <h1> Vi fördjupar oss just nu inom: </h1><hr/>
-    <div class="table-container col-12 row">
+    <div id="table-mother" class="col-12">
+    <h1> Just nu fördjupar vi oss i </h1>
+    <div class="table-container">
     
        <table id="jsTrends" class="trend-tables">
             <tr>              
@@ -147,7 +145,7 @@ function theTeam() {
             </tr>
         </table>
     </div>
-    <div class="table-container col-12 row">
+    <div class="table-container">
         <table id="cssTrends" class="trend-tables">
             <tr>
                 <h3>Trendande CSS-bibliotek</h3>
