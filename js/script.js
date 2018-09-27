@@ -296,6 +296,11 @@ function slideshow(){
 
 )}
 
+function transform(x) {
+    console.log(x);
+    x.classList.toggle("transform");
+}
+
 
 function personalPagePontus(){
 

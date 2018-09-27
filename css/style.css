@@ -58,6 +58,18 @@
     font-style: italic;
 }
 
+/* Navikon-bars för mobil */
+
+#navicon{
+    visibility: hidden;
+}
+.bar1, .bar2, .bar3 {
+   visibility: hidden;
+
+}
+
+
+/**/
 
 .nav{
     width: 100%;
