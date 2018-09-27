@@ -8,9 +8,9 @@ function portfolio() {
 
 
     $('#iframe-div').empty().append(`
-   
+   <h1>Portfolio<hr/></h1>
     <div class="projectDiv">
-    <h2 style="text-align:center">Portfolio<hr/></h2>
+    
         <div class="projectImg">
             <img name="project1" src="images/project1.jpg" alt="">
             <a href="https://www.freepik.com/free-vector/circular-wave-logo-template_843660.htm" target="_blank">
