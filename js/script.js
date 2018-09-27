@@ -73,6 +73,7 @@ function theTeam() {
 
     $('#teamref').attr('onclick', 'goResponsive()');
 
+
     $('#iframe-div').empty().append(`
     <h1>Vilka är vi?<hr/></h1>
     <div id="theTeam-mother"> 
@@ -165,6 +166,9 @@ function theTeam() {
         </table>
     </div>
     </div>`)
+
+
+
     var jsTrends = [];
     var cssTrends = [];
 
@@ -257,15 +261,16 @@ function contactForm() {
 <div id="msg" class="col-3 row">
 <label for="msg-input">Meddelande</label>
 <textarea type="message" id="msg-input" placeholder="Skriv ditt meddelande här..."></textarea>
+<span class="hidden" id="err-msg-msg" style="color:red"> Vänligen lämna ett meddelande</span>
 <input type="button" value="Skicka" id="btn">
-<span class="hidden" id="err-msg-msg" style="color:red">
-    Vänligen lämna ett meddelande</span>
+
+   
 
 
 </div>
 
 
-    <div id="map" class="col-6"></div>
+    <div id="map" class="col-5"></div>
 </div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsjoxCuIm512iS1klcnwE0b0kyoP7cwV8&callback=myMap"></script>
@@ -511,8 +516,6 @@ function personalPageJonte() {
 }
 
 function personalPageJohan() {
-
-
     $('#iframe-div').empty().append(`
     <div class="card">
 
