@@ -122,5 +122,9 @@
         width:100% !important;
     }
 
+    #map {
+        margin-top: 15% !important;
+    }
+
    /**/
 }
