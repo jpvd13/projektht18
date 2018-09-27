@@ -227,14 +227,14 @@ function contactForm() {
         </div>
 </div>
 
-<div id="err-modal" class ="modal">
-    <div class="modal-content">
+<div id="err-modal">
+    <div id="modal-content">
         <span id="close">&times;</span>
         <p id="message"></p>
     </div>
 </div>
 
-<div class="">
+
     <div id="msg" class="col-3 row">
         <label for="msg-input">Meddelande</label>
         <textarea type="message" id="msg-input" placeholder="Skriv ditt meddelande här..."></textarea>
@@ -244,11 +244,16 @@ function contactForm() {
         <input type="button" value="Skicka" id="btn">
     </div>
 
-</div>
+
+
 
 
 </form>
-</div>`)}
+
+</div>
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsjoxCuIm512iS1klcnwE0b0kyoP7cwV8&callback=myMap"></script>
+`)}
 
 
 function slideshow(){
@@ -304,32 +309,97 @@ function transform(x) {
 
 function personalPagePontus(){
 
-    $('#iframe-div').empty().append(`<div class="card">
-    <img src= "images/grass.jpg" alt="Pontus" style="width:100%">
-    <h1>Pontus Törn</h1>
-    <p class="title">Student</p>
-    <p>Örebro Universitet</p>
+    $('#iframe-div').empty().append(`    <div class="card">
+    <img src="images/pontus.jpg" alt="Pontus" style="width:100%">
     
     <div>
         <h2>HTML</h2>
-        <div class="myProgress">
-            <div id="myBarHtml"> </div>
+        <div id="progress" class="line stripesLoader" style="background: position 0%;
+        background-color:#88a7b6">
+        <div class="rotate">75%</div>
         </div>
         <h2>CSS</h2>
-        <div class="myProgress">
-            <div id="myBarCss"> </div>
+        <div id="progress" class="line stripesLoader" style="background-position:100%;
+        background-color:#88a7b6">
+        <div class="rotate">100%</div>
         </div>
         <h2>JavaScript</h2>
-        <div class="myProgress">
-            <div id="myBarJava"> </div>
+        <div id="progress" class="line stripesLoader" style="background-position:70%;
+        background-color:#88a7b6">
+        <div class="rotate">70%</div>
         </div>
         <h2>SQL</h2>
-        <div class="myProgress">
-            <div id="myBarSql"> </div>
+        <div id="progress" class="line stripesLoader" style="background-position:100%;
+        background-color:#88a7b6">
+        <div class="rotate">100%</div>
         </div>
     </div>
-<button onclick="move()">Click me</button>
-</div> `
+
+</div>
+<div class="card2">
+        <img src="images/aboutme.jpg" alt="Pontus" style="width:100%">
+        <h1>Pontus Törn</h1>
+    <p class="title">Student</p>
+    <p>Örebro Universitet</p>
+       
+        <p class="infoText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit et est ac finibus. Suspendisse auctor sagittis placerat. Donec non nisi nunc. Praesent vulputate dolor at ante condimentum malesuada. Maecenas euismod tincidunt est, eu cursus ligula malesuada tincidunt. Morbi id blandit velit. Sed diam dui, egestas sit amet rutrum ut, suscipit in odio.
+
+                Etiam vehicula venenatis tellus. Aliquam vitae venenatis tortor. Aenean non auctor tellus. Suspendisse vulputate ut mauris a dictum. Nulla at tincidunt urna. Integer non quam ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sit amet erat eu tellus euismod semper at vel urna. Fusce leo erat, ultrices a interdum quis, semper a ante. Donec vitae lacinia velit. Quisque sed velit nec turpis rhoncus sollicitudin.
+                
+                Maecenas ornare erat enim, convallis rhoncus metus porttitor sit amet. Morbi efficitur erat eget nulla condimentum maximus. Morbi in viverra leo, a placerat ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus egestas ante a mi venenatis vestibulum. Suspendisse potenti. Duis eget sapien tincidunt, ultricies diam vitae, volutpat nunc. Pellentesque id dignissim justo. Pellentesque vitae dui sit amet turpis gravida aliquet. Vestibulum sapien dui, dapibus euismod iaculis ac, dignissim nec sapien. In blandit, risus non ultricies hendrerit, eros est varius risus, at vulputate urna dolor quis massa. Maecenas dignissim tincidunt quam, in facilisis est dapibus sit amet. Mauris in lectus laoreet, pellentesque dui a, suscipit turpis.</p>
+ 
+    
+    </div>
+    <div class="card2">
+            <img src="images/projects.jpg" alt="Pontus" style="width:100%">
+            <div class="projectDiv">
+                    <div class="projectImg" id="project2">
+                        <img name="project2" src="images/project2.jpg" alt="">
+                        <a href="https://www.freepik.com/free-vector/logo-template-design_1063800.htm" target="_blank">
+                            <div class="tooltip" href="#">
+                                Visa projekt
+                            </div>
+                        </a>
+                    </div>
+     
+        
+        </div>
+        <div class="projectDiv">
+                <div class="projectImg" id="project2">
+                    <img name="project2" src="images/project3.jpg" alt="">
+                    <a href="https://www.freepik.com/free-vector/technological-logo-design_1187936.htm" target="_blank">
+                        <div class="tooltip" href="#">
+                            Visa projekt
+                        </div>
+                    </a>
+                </div>
+ 
+    
+    </div>
+    <div class="projectDiv">
+            <div class="projectImg" id="project2">
+                <img name="project2" src="images/project1.jpg" alt="">
+                <a href="https://www.freepik.com/free-vector/circular-wave-logo-template_843660.htm" target="_blank">
+                    <div class="tooltip" href="#">
+                        Visa projekt
+                    </div>
+                </a>
+            </div>
+
+
+</div>
+<div class="projectDiv">
+        <div class="projectImg" id="project2">
+            <img name="project2" src="images/project2.jpg" alt="">
+            <a href="https://www.freepik.com/free-vector/logo-template-design_1063800.htm" target="_blank">
+                <div class="tooltip" href="#">
+                    Visa projekt
+                </div>
+            </a>
+        </div>
+
+
+</div>`
 
 )}
 

@@ -46,23 +46,19 @@ function test() {
   //})
 
   var errMsg = document.getElementById('err-modal');
-  var close = document.getElementById('close');
+  
 
   $('#btn').on('click', function () {
     if (nameCheck === true && telCheck === true && msgCheck === true && emailCheck === true) {
       $('#name-input, #email-input, #tel-input, #msg-input').val('');
 
-      $('.modal').css('display', 'block');
+
+      $('#err-modal').css('display', 'block');
       $('#message').empty().append('Meddelande skickat!');
-
-      $('#close').on('click', function () {
-        errMsg.style.display = "none";
-
-        errMsg.onclick = function (event) {
-          console.log("asd");
-          errMsg.style.display = "none";
-
-        }
+       
+        $('#err-modal').on('click', function(){
+          $('#err-modal').css('display', 'none');
+        })
 
         errorMessage(false, "-msg");
         errorMessage(false, "-name");
@@ -70,23 +66,30 @@ function test() {
         errorMessage(false, "-email");
         $('#err-msg-name, #err-msg-email, #err-msg-tel, #err-msg-msg').addClass('hidden');
 
-      })
-    } else {
+      
+     } else {
 
-      $('.modal').css('display', 'block');
+      $('#err-modal').css('display', 'block');
       $('#message').empty().append('Formuläret är inte korrekt ifyllt, försök igen.');
 
-      $('#close').on('click', function () {
-        errMsg.style.display = "none";
-
-        errMsg.onclick = function (event) {
-          console.log("asd");
-          errMsg.style.display = "none";
-
-        }
-      })
+        $('#err-modal').on('click', function(){
+          $('#err-modal').css('display', 'none');
+        })
     }
-  })
+    
+    
+   
+
+  })}
+  
+  function myMap() {
+    var mapProp= {
+        center:new google.maps.LatLng(39.027877, 125.776536),
+        zoom:18,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+    var map=new google.maps.Map(document.getElementById("map"),mapProp);
+    }
   
 
   function errorMessage(validationResult, textType) {
@@ -112,4 +115,4 @@ function test() {
   }
 
 
-}
+
