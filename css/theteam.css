@@ -1,11 +1,30 @@
-div > .personContainerDiv{
-    width: 180px;
-    height: 250px;
-    margin: 4.16%;
-    float: left;
+#theTeam-mother{
+    width: 100%;
+    padding: 5%;
 }
 
-div > .personContainerDiv > a{
+
+#leftSide{
+    width: 40%;
+    float: left;   
+}
+
+#rightSide{
+    width: 55%;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);
+    position: relative;
+    padding: 1%;
+    float: right;
+    margin-left: 5%;
+}
+
+.personContainerDiv{
+    width: 100%;
+    height: 250px;
+    margin-bottom: 10%;
+}
+
+.personContainerDiv > a{
     color: black;
     text-decoration: none;
     margin: auto;   
@@ -14,13 +33,18 @@ div > .personContainerDiv > a{
 .personContainerDiv > a > p {
     font-size: 14px;
 }
-
+div > .personText{
+    width: 50%;
+    float: right;
+    padding-top: 12.5%;
+}
 div > .profileImgDiv{
-    width: 100%;
-    height: 80%;
+    width: 180px;
+    height: 250px;
     border-radius: 10px;
     border: 2px solid white;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);   
+    float: left;
 }
 
 img{
@@ -30,13 +54,16 @@ img{
     object-fit: cover;
 }
 
-div > .table-mother{
-    float: left;
+.trend-row > td, .trend-row > td > a{
+    color: black;
+    font-size: 16px;
 }
 
-.trend-row > td > a{
-    color: black;
-
+.trend-row > td > a {
+    color: rgb(0, 0, 180);
+}
+a:hover {
+    text-decoration: underline;
 }
 
 table {
@@ -64,14 +91,5 @@ tbody tr:nth-child(even){
 tbody tr:nth-child(odd){
     background-color: rgb(198, 225, 255);
 }
-
-.textAboutUs{
-    margin-top: 5%;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);
-    margin-left: 5%;    
-    margin-right: 5%;
-}
-
-
 
 
