@@ -64,12 +64,16 @@
         padding-right: 9px;
     }
 
-    .personContainerDiv {
-        margin-left: 17.5% !important;
-       
-    }
+  
 
     .viContainer > h2 {
         text-align: center !important;
     }
+
+    div > .personContainerDiv{
+        width: 270px !important;
+        height: 350px !important;
+    }
+
+
 }
