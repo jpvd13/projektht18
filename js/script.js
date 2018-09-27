@@ -9,8 +9,7 @@ function portfolio() {
 
     $('#iframe-div').empty().append(`
    <h1>Portfolio<hr/></h1>
-    <div class="projectDiv">
-    
+    <div class="projectDiv">    
         <div class="projectImg">
 
             <img name="project1" src="images/project1.jpg" alt="">
@@ -76,16 +75,20 @@ function theTeam() {
 
     $('#iframe-div').empty().append(`
     <h1>Vilka är vi?<hr/></h1>
-        <div class="col-12">
-        
-
-        <div class="personContainerDiv">
-            <div id="pontus" class="profileImgDiv">
+    <div id="theTeam-mother"> 
+        <div id="leftSide">
+        <div class="personContainerDiv"> 
+           <div id="pontus" class="profileImgDiv">
                 <a href="#" onClick="personalPagePontus()">
-                    <img src="images/grass.jpg" alt="">
+                    <img src="images/pontus.jpg" alt="">
                 </a>
             </div>
-            <a href="#" onClick="personalPagePontus()">Pontus Törn</a>
+            <div class="personText"> 
+            <p class="personInfo">
+                <a href="#" onClick="personalPagePontus()">Pontus Törn </a> <hr/>
+                +4673123456 <br/>
+                pontustorn@gmail.com</p>
+            </div>           
         </div>
 
         <div class="personContainerDiv">
@@ -94,23 +97,32 @@ function theTeam() {
                     <img src="images/jonte.jpg" alt="">
                 </a>
             </div>
-            <a href="#" onClick="personalPageJonte()"> Jonathan Olsson</a>
+            <div class="personText"> 
+            <p class="personInfo">
+                <a class="namn" href="#" onClick="personalPageJonte()"> Jonathan Olsson</a> <hr/>
+                +4673123456 <br/>
+                pontustorn@gmail.com</p>
+            </div>
         </div>
 
         <div class="personContainerDiv">
             <div id="johan" class="profileImgDiv">
                 <a href="#" onClick="personalPageJohan()">
-                    <img src="images/slide5.jpg" alt="">
+                    <img src="images/Johan.jpg" alt="">
                 </a>
             </div>
 
-            <a href="#" onClick="personalPageJohan()"> Johan Dalén</a>
-
+            <div class="personText"> 
+            <p class="personInfo">
+                <a href="#" onClick="personalPageJohan()"> Johan Dalén</a><hr/>
+                +4670689288 <br/>
+                xjodal22@gmail.com</p>
+            </div>
         </div>
-    </div>
+        </div>
 
-    <div class="textAboutUs col-5">
-        <h2>Mellan Sarek och Padjelanta </h2>
+    <div id="rightSide">
+        <h2>Lite kort om oss</h2>
         <p> Padjelanta är det höga landet som är vackert och mjukt. Sarek är brutalt och alpint, bäst därför att
             balansera på gränsen. Padjelanta ligger i norra Lappland med Sarek i öster och Sulitelma i väster. Om vi
             börjar från norr så stiger Akka upp i ett fantastiskt majestät och gör skäl för namnet - Lapplands
@@ -121,14 +133,13 @@ function theTeam() {
             branter. Det är högt och imponerande, och med den stora forsens brus är detta sinnebilden av Lappland -
             höga bergen, brusande forsar och snötäckta bergssidor.
         </p>
-       
+        </div>
     </div>
+    <div id="table-mother" class="col-12">
+    <h1> Just nu fördjupar vi oss i </h1>
+    <div class="table-container">
     
-
-    
-    <div class="table-container col-12 row">
-    <h2> Vi fördjupar oss just nu inom: </h2>
-        <table id="jsTrends" class="trend-tables">
+       <table id="jsTrends" class="trend-tables">
             <tr>              
                 <h3>Trendande JavaScript-bibliotek</h3>
             </tr>
@@ -140,7 +151,7 @@ function theTeam() {
             </tr>
         </table>
     </div>
-    <div class="table-container col-12 row">
+    <div class="table-container">
         <table id="cssTrends" class="trend-tables">
             <tr>
                 <h3>Trendande CSS-bibliotek</h3>
@@ -152,6 +163,7 @@ function theTeam() {
                 <th>Stars denna vecka</th>
             </tr>
         </table>
+    </div>
     </div>`)
     var jsTrends = [];
     var cssTrends = [];
@@ -307,35 +319,39 @@ function home() {
 
 function personalPagePontus() {
 
-    $('#iframe-div').empty().append(`    <div class="card">
+    $('#iframe-div').empty().append(`    
+    
+    <div class="card">
     <img src="images/pontus.jpg" alt="Pontus" style="width:100%">
     
     <div>
         <h2>HTML</h2>
         <div id="progress" class="line stripesLoader" style="background: position 0%;
-        background-color:#88a7b6">
-        <div class="rotate">75%</div>
+        ">
+        <div class="rotateText">75%</div>
         </div>
         <h2>CSS</h2>
         <div id="progress" class="line stripesLoader" style="background-position:100%;
-        background-color:#88a7b6">
-        <div class="rotate">100%</div>
+        ">
+        <div class="rotateText">100%</div>
         </div>
         <h2>JavaScript</h2>
         <div id="progress" class="line stripesLoader" style="background-position:70%;
-        background-color:#88a7b6">
-        <div class="rotate">70%</div>
+        ">
+        <div class="rotateText">70%</div>
         </div>
         <h2>SQL</h2>
         <div id="progress" class="line stripesLoader" style="background-position:100%;
-        background-color:#88a7b6">
-        <div class="rotate">100%</div>
+        ">
+        <div class="rotateText">100%</div>
         </div>
     </div>
 
+
 </div>
 <div class="card2">
-        <img src="images/aboutme.jpg" alt="Pontus" style="width:100%">
+
+        <img src="images/aboutme.png" alt="Pontus" style="width:100%">
         <h1>Pontus Törn</h1>
     <p class="title">Student</p>
     <p>Örebro Universitet</p>
@@ -344,15 +360,15 @@ function personalPagePontus() {
 
                 Etiam vehicula venenatis tellus. Aliquam vitae venenatis tortor. Aenean non auctor tellus. Suspendisse vulputate ut mauris a dictum. Nulla at tincidunt urna. Integer non quam ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sit amet erat eu tellus euismod semper at vel urna. Fusce leo erat, ultrices a interdum quis, semper a ante. Donec vitae lacinia velit. Quisque sed velit nec turpis rhoncus sollicitudin.
                 
-                Maecenas ornare erat enim, convallis rhoncus metus porttitor sit amet. Morbi efficitur erat eget nulla condimentum maximus. Morbi in viverra leo, a placerat ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus egestas ante a mi venenatis vestibulum. Suspendisse potenti. Duis eget sapien tincidunt, ultricies diam vitae, volutpat nunc. Pellentesque id dignissim justo. Pellentesque vitae dui sit amet turpis gravida aliquet. Vestibulum sapien dui, dapibus euismod iaculis ac, dignissim nec sapien. In blandit, risus non ultricies hendrerit, eros est varius risus, at vulputate urna dolor quis massa. Maecenas dignissim tincidunt quam, in facilisis est dapibus sit amet. Mauris in lectus laoreet, pellentesque dui a, suscipit turpis.</p>
+                </p>
  
     
     </div>
-    <div class="card2">
-            <img src="images/projects.jpg" alt="Pontus" style="width:100%">
+    <div class="card3">
+            <img src="images/projects.png" alt="projects" style="width:100%">
             <div class="projectDiv">
-                    <div class="projectImg" id="project2">
-                        <img name="project2" src="images/project2.jpg" alt="">
+                    <div class="projectImg">
+                        <img src="images/project2.jpg" alt="">
                         <a href="https://www.freepik.com/free-vector/logo-template-design_1063800.htm" target="_blank">
                             <div class="tooltip" href="#">
                                 Visa projekt
@@ -363,8 +379,8 @@ function personalPagePontus() {
         
         </div>
         <div class="projectDiv">
-                <div class="projectImg" id="project2">
-                    <img name="project2" src="images/project3.jpg" alt="">
+                <div class="projectImg">
+                    <img src="images/project3.jpg" alt="">
                     <a href="https://www.freepik.com/free-vector/technological-logo-design_1187936.htm" target="_blank">
                         <div class="tooltip" href="#">
                             Visa projekt
@@ -375,8 +391,8 @@ function personalPagePontus() {
     
     </div>
     <div class="projectDiv">
-            <div class="projectImg" id="project2">
-                <img name="project2" src="images/project1.jpg" alt="">
+            <div class="projectImg">
+                <img src="images/project1.jpg" alt="">
                 <a href="https://www.freepik.com/free-vector/circular-wave-logo-template_843660.htm" target="_blank">
                     <div class="tooltip" href="#">
                         Visa projekt
@@ -387,8 +403,8 @@ function personalPagePontus() {
 
 </div>
 <div class="projectDiv">
-        <div class="projectImg" id="project2">
-            <img name="project2" src="images/project2.jpg" alt="">
+        <div class="projectImg">
+            <img src="images/project2.jpg" alt="">
             <a href="https://www.freepik.com/free-vector/logo-template-design_1063800.htm" target="_blank">
                 <div class="tooltip" href="#">
                     Visa projekt
@@ -397,6 +413,58 @@ function personalPagePontus() {
         </div>
 
 
+</div>
+</div>
+<div class="card4"> 
+        
+        <img src="images/contactme.png" alt="contactme" style="width:100%" onclick="contactForm(), test()">
+        <div class="projectDiv">
+                <a href="https://www.facebook.com/pontus.torn.1" target="_blank" class="contactImg">
+                    <img src="images/facebook.png" alt="">
+                    
+                    </a>
+                </div>
+ 
+    
+    <div class="projectDiv">
+            <a href="https://linkedin.com" target="_blank" class="contactImg">
+                <img src="images/linkedin.png" alt="">
+                
+                </a>
+            </div>
+
+
+
+<div class="projectDiv">
+        <a href="https://twitter.com" target="_blank" class="contactImg">
+            <img src="images/twitter.png" alt="">
+            
+            </a>
+        </div>
+
+
+
+<div class="projectDiv">
+    <a href="https://code.visualstudio.com/" target="_blank" class="contactImg">
+        <img src="images/visualstudio.png" alt="">
+        
+        </a>
+    </div>
+<div class="projectDiv">
+        <a href="https://outlook.live.com" target="_blank" class="contactImg">
+            <img src="images/mail.png" alt="">
+            </a>
+        </div>
+        <div class="projectDiv">
+        <a href="https://pornhub.com" target="_blank" class="contactImg">
+            <img src="images/pornhub.jpg" alt="">
+            </a>
+        </div>
+    
+          
+    
+    
+    </div>
 </div>`
 
     )
@@ -404,32 +472,40 @@ function personalPagePontus() {
 
 function personalPageJonte() {
 
-    $('#iframe-div').empty().append(`<div class="card">
-    <img src= "images/jonte.jpg" alt="Jonte" style="width:100%">
-    <h1>Pontus Törn</h1>
-    <p class="title">Student</p>
-    <p>Örebro Universitet</p>
+    $('#iframe-div').empty().append(`    
+    
+    <div class="card">
+    <img src="images/jonte.jpg" alt="Jonte" style="width:100%">
     
     <div>
         <h2>HTML</h2>
-        <div class="myProgress">
-            <div id="myBarHtml"> </div>
+        <div id="progress" class="line stripesLoader" style="background: position 0%;
+        ">
+        <div class="rotateText">75%</div>
         </div>
         <h2>CSS</h2>
-        <div class="myProgress">
-            <div id="myBarCss"> </div>
+        <div id="progress" class="line stripesLoader" style="background-position:100%;
+        ">
+        <div class="rotateText">100%</div>
         </div>
         <h2>JavaScript</h2>
-        <div class="myProgress">
-            <div id="myBarJava"> </div>
+        <div id="progress" class="line stripesLoader" style="background-position:70%;
+        ">
+        <div class="rotateText">70%</div>
         </div>
         <h2>SQL</h2>
-        <div class="myProgress">
-            <div id="myBarSql"> </div>
+        <div id="progress" class="line stripesLoader" style="background-position:100%;
+        ">
+        <div class="rotateText">100%</div>
         </div>
     </div>
-<button onclick="move()">Click me</button>
-</div> `
+
+
+
+</div>
+<div class="card2">
+        <img src="images/aboutme.png" alt="aboutme" style="width:100%">
+        <h1>Jonathan Olsson</h1>
 
     )
 }
@@ -439,29 +515,270 @@ function personalPageJohan() {
     $('#iframe-div').empty().append(`<div class="card">
     <img src= "images/slide5.jpg" alt="Johan" style="width:100%">
     <h1>Pontus Törn</h1>
+
     <p class="title">Student</p>
     <p>Örebro Universitet</p>
+       
+        <p class="infoText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit et est ac finibus. Suspendisse auctor sagittis placerat. Donec non nisi nunc. Praesent vulputate dolor at ante condimentum malesuada. Maecenas euismod tincidunt est, eu cursus ligula malesuada tincidunt. Morbi id blandit velit. Sed diam dui, egestas sit amet rutrum ut, suscipit in odio.
+
+                Etiam vehicula venenatis tellus. Aliquam vitae venenatis tortor. Aenean non auctor tellus. Suspendisse vulputate ut mauris a dictum. Nulla at tincidunt urna. Integer non quam ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sit amet erat eu tellus euismod semper at vel urna. Fusce leo erat, ultrices a interdum quis, semper a ante. Donec vitae lacinia velit. Quisque sed velit nec turpis rhoncus sollicitudin.
+                
+                </p>
+ 
+    
+    </div>
+    <div class="card3">
+            <img src="images/projects.png" alt="projects" style="width:100%">
+            <div class="projectDiv">
+                    <div class="projectImg">
+                        <img src="images/project2.jpg" alt="">
+                        <a href="https://www.freepik.com/free-vector/logo-template-design_1063800.htm" target="_blank">
+                            <div class="tooltip" href="#">
+                                Visa projekt
+                            </div>
+                        </a>
+                    </div>
+     
+        
+        </div>
+        <div class="projectDiv">
+                <div class="projectImg">
+                    <img src="images/project3.jpg" alt="">
+                    <a href="https://www.freepik.com/free-vector/technological-logo-design_1187936.htm" target="_blank">
+                        <div class="tooltip" href="#">
+                            Visa projekt
+                        </div>
+                    </a>
+                </div>
+ 
+    
+    </div>
+    <div class="projectDiv">
+            <div class="projectImg">
+                <img src="images/project1.jpg" alt="">
+                <a href="https://www.freepik.com/free-vector/circular-wave-logo-template_843660.htm" target="_blank">
+                    <div class="tooltip" href="#">
+                        Visa projekt
+                    </div>
+                </a>
+            </div>
+
+
+</div>
+<div class="projectDiv">
+        <div class="projectImg">
+            <img src="images/project2.jpg" alt="">
+            <a href="https://www.freepik.com/free-vector/logo-template-design_1063800.htm" target="_blank">
+                <div class="tooltip" href="#">
+                    Visa projekt
+                </div>
+            </a>
+        </div>
+
+
+</div>
+</div>
+<div class="card4"> 
+        
+        <img src="images/contactme.png" alt="contactme" style="width:100%" onclick="contactForm(), test()">
+        <div class="projectDiv">
+                <a href="https://www.facebook.com/jonathan.olsson.503" target="_blank" class="contactImg">
+                    <img src="images/facebook.png" alt="">
+                    
+                    </a>
+                </div>
+ 
+    
+    <div class="projectDiv">
+            <a href="https://linkedin.com" target="_blank" class="contactImg">
+                <img src="images/linkedin.png" alt="">
+                
+                </a>
+            </div>
+
+
+
+<div class="projectDiv">
+        <a href="https://twitter.com" target="_blank" class="contactImg">
+            <img src="images/twitter.png" alt="">
+            
+            </a>
+        </div>
+
+
+
+<div class="projectDiv">
+    <a href="https://code.visualstudio.com/" target="_blank" class="contactImg">
+        <img src="images/visualstudio.png" alt="">
+        
+        </a>
+    </div>
+<div class="projectDiv">
+        <a href="https://outlook.live.com" target="_blank" class="contactImg">
+            <img src="images/mail.png" alt="">
+            </a>
+        </div>
+        <div class="projectDiv">
+        <a href="https://pornhub.com" target="_blank" class="contactImg">
+            <img src="images/pornhub.jpg" alt="">
+            </a>
+        </div>
+    
+          
+    
+    
+    </div>
+</div>`
+
+)}
+
+function personalPageJohan(){
+    $('#iframe-div').empty().append(`    
+    
+    <div class="card">
+    <img src="images/Johan.jpg" alt="Johan" style="width:100%">
     
     <div>
         <h2>HTML</h2>
-        <div class="myProgress">
-            <div id="myBarHtml"> </div>
+        <div id="progress" class="line stripesLoader" style="background: position 0%;
+        ">
+        <div class="rotateText">75%</div>
         </div>
         <h2>CSS</h2>
-        <div class="myProgress">
-            <div id="myBarCss"> </div>
+        <div id="progress" class="line stripesLoader" style="background-position:100%;
+        ">
+        <div class="rotateText">100%</div>
         </div>
         <h2>JavaScript</h2>
-        <div class="myProgress">
-            <div id="myBarJava"> </div>
+        <div id="progress" class="line stripesLoader" style="background-position:70%;
+        ">
+        <div class="rotateText">70%</div>
         </div>
         <h2>SQL</h2>
-        <div class="myProgress">
-            <div id="myBarSql"> </div>
+        <div id="progress" class="line stripesLoader" style="background-position:100%;
+        ">
+        <div class="rotateText">100%</div>
         </div>
     </div>
-<button onclick="move()">Click me</button>
-</div> `
+
+
+</div>
+<div class="card2">
+        <img src="images/aboutme.png" alt="Johan" style="width:100%">
+        <h1>Johan Dalén</h1>
+    <p class="title">Student</p>
+    <p>Örebro Universitet</p>
+       
+        <p class="infoText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit et est ac finibus. Suspendisse auctor sagittis placerat. Donec non nisi nunc. Praesent vulputate dolor at ante condimentum malesuada. Maecenas euismod tincidunt est, eu cursus ligula malesuada tincidunt. Morbi id blandit velit. Sed diam dui, egestas sit amet rutrum ut, suscipit in odio.
+
+                Etiam vehicula venenatis tellus. Aliquam vitae venenatis tortor. Aenean non auctor tellus. Suspendisse vulputate ut mauris a dictum. Nulla at tincidunt urna. Integer non quam ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sit amet erat eu tellus euismod semper at vel urna. Fusce leo erat, ultrices a interdum quis, semper a ante. Donec vitae lacinia velit. Quisque sed velit nec turpis rhoncus sollicitudin.
+                
+                </p>
+ 
+    
+    </div>
+    <div class="card3">
+            <img src="images/projects.png" alt="projects" style="width:100%">
+            <div class="projectDiv">
+                    <div class="projectImg">
+                        <img src="images/project2.jpg" alt="">
+                        <a href="https://www.freepik.com/free-vector/logo-template-design_1063800.htm" target="_blank">
+                            <div class="tooltip" href="#">
+                                Visa projekt
+                            </div>
+                        </a>
+                    </div>
+     
+        
+        </div>
+        <div class="projectDiv">
+                <div class="projectImg">
+                    <img src="images/project3.jpg" alt="">
+                    <a href="https://www.freepik.com/free-vector/technological-logo-design_1187936.htm" target="_blank">
+                        <div class="tooltip" href="#">
+                            Visa projekt
+                        </div>
+                    </a>
+                </div>
+ 
+    
+    </div>
+    <div class="projectDiv">
+            <div class="projectImg">
+                <img src="images/project1.jpg" alt="">
+                <a href="https://www.freepik.com/free-vector/circular-wave-logo-template_843660.htm" target="_blank">
+                    <div class="tooltip" href="#">
+                        Visa projekt
+                    </div>
+                </a>
+            </div>
+
+
+</div>
+<div class="projectDiv">
+        <div class="projectImg">
+            <img src="images/project2.jpg" alt="">
+            <a href="https://www.freepik.com/free-vector/logo-template-design_1063800.htm" target="_blank">
+                <div class="tooltip" href="#">
+                    Visa projekt
+                </div>
+            </a>
+        </div>
+
+
+</div>
+</div>
+<div class="card4"> 
+        
+        <img src="images/contactme.png" alt="contactme" style="width:100%" onclick="contactForm(), test()">
+        <div class="projectDiv">
+                <a href="https://www.pornhub.com/video/search?search=johan" target="_blank" class="contactImg">
+                    <img src="images/facebook.png" alt="">
+                    
+                    </a>
+                </div>
+ 
+    
+    <div class="projectDiv">
+            <a href="https://linkedin.com" target="_blank" class="contactImg">
+                <img src="images/linkedin.png" alt="">
+                
+                </a>
+            </div>
+
+
+
+<div class="projectDiv">
+        <a href="https://twitter.com" target="_blank" class="contactImg">
+            <img src="images/twitter.png" alt="">
+            
+            </a>
+        </div>
+
+
+
+<div class="projectDiv">
+    <a href="https://code.visualstudio.com/" target="_blank" class="contactImg">
+        <img src="images/visualstudio.png" alt="">
+        
+        </a>
+    </div>
+<div class="projectDiv">
+        <a href="https://outlook.live.com" target="_blank" class="contactImg">
+            <img src="images/mail.png" alt="">
+            </a>
+        </div>
+ <div class="projectDiv">
+        <a href="https://pornhub.com" target="_blank" class="contactImg">
+            <img src="images/pornhub.jpg" alt="">
+            </a>
+        </div>
+    
+          
+    
+    
+    </div>
+</div>`
 
     )
 }
