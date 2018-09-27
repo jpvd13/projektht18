@@ -6,9 +6,6 @@
     margin: 30px;
 }
 
-form {
-    height:100%;
-}
 
 #tel-input, #name-input, #email-input{
     width: 100%;
@@ -24,7 +21,6 @@ textarea[type=message]{
     width: 175%;
     height: 200px;
     padding: 12px 20px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -109,5 +105,6 @@ span{
 #map {
     height: 300px;
     margin-left: 20%;
+    margin-top: 3%;
     
 }
