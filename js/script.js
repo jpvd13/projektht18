@@ -1,15 +1,17 @@
-function portfolio() {    
-    $('#nav-home').css('background-color', '')    
-    $('#nav-team').css('background-color', '');
-    $('#nav-portfolio').css('background-color', 'rgba(0, 0, 0, 0.123)');
-    $('#nav-contact').css('background-color', '');
-    
-    $('#teamref').attr('onclick', 'theTeam()');
+function portfolio() {
+    $('#navPortfolio').attr('class', 'active');
+    $('#navHome').attr('class', 'goResponsive()');
+    $('#navContact').attr('class', '');
+    $('#teamref').attr('class', '');
+
+    $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
+
 
     $('#iframe-div').empty().append(`
-   <h2 style="text-align:center">V&aring;ra senaste projekt</h2>   
+   
     <div class="projectDiv">
-        <div class="projectImg" id="project1">
+    <h2 style="text-align:center">Portfolio<hr/></h2>
+        <div class="projectImg">
             <img name="project1" src="images/project1.jpg" alt="">
             <a href="https://www.freepik.com/free-vector/circular-wave-logo-template_843660.htm" target="_blank">
                 <div class="tooltip" href="#">
@@ -22,7 +24,7 @@ function portfolio() {
         Beskrivande text som säger var och när vi utvecklat projektet. Det var igår, i parken. <hr />
     </div>
     <div class="projectDiv">
-        <div class="projectImg" id="project2">
+        <div class="projectImg">
             <img name="project2" src="images/project2.jpg" alt="">
             <a href="https://www.freepik.com/free-vector/logo-template-design_1063800.htm" target="_blank">
                 <div class="tooltip" href="#">
@@ -60,19 +62,21 @@ function portfolio() {
                </label></div>
         Beskrivande text som säger var och när vi utvecklat projektet. Det var igår, i parken. <hr />
     </div>
-</div>`)}
+</div>`)
+}
 
 function theTeam() {
-    $('#nav-home').css('background-color', '')    
-    $('#nav-team').css('background-color', 'rgba(0, 0, 0, 0.123)');
-    $('#nav-portfolio').css('background-color', '');
-    $('#nav-contact').css('background-color', '');
+    $('#navPortfolio').attr('class', '');
+    $('#navHome').attr('class', '');
+    $('#navContact').attr('class', '');
+    $('#teamref').attr('class', 'active');
 
-    $('#teamref').attr('onclick', '');
+    $('#teamref').attr('onclick', 'goResponsive()');
 
     $('#iframe-div').empty().append(`
-        <div class="col-12 viContainer">
-        <h2>Vilka är vi?</h2>
+    <h1>Vilka är vi?<hr/></h1>
+        <div class="col-12">
+        
 
         <div class="personContainerDiv">
             <div id="pontus" class="profileImgDiv">
@@ -148,57 +152,58 @@ function theTeam() {
             </tr>
         </table>
     </div>`)
-        var jsTrends = [];
-        var cssTrends = [];    
+    var jsTrends = [];
+    var cssTrends = [];
 
-            if(jsTrends && cssTrends.length == 0){
-                
-            
-             $.getJSON('https://github-trending-api.now.sh/repositories?language=javascript&since=weekly', function(jsResult) {                             
-                 jsTrends = jsResult.slice(0,5);            
-                
-                jsTrends.forEach((trend) => {
-                            var tableRow = $(
-                     `<tr class="trend-row">
+    if (jsTrends && cssTrends.length == 0) {
+
+
+        $.getJSON('https://github-trending-api.now.sh/repositories?language=javascript&since=weekly', function (jsResult) {
+            jsTrends = jsResult.slice(0, 5);
+
+            jsTrends.forEach((trend) => {
+                var tableRow = $(
+                    `<tr class="trend-row">
                      <td class="trend-name"><a href="${trend.url}" target="_blank"> ${trend.name}</a></td>
                      <td class="trend-author"><a href="https://github.com/${trend.author}" target="_blank">${trend.author}</a></td>
                      <td class="trend-stars">${trend.stars}</td>	
                      <td class="trend-stars-weekly">${trend.currentPeriodStars}</td>					
                      </tr>`
-                 );                 
-                 $('#jsTrends').append(tableRow);
-                                  
-                 }) 
-             })
-     
-             $.getJSON('https://github-trending-api.now.sh/repositories?language=css&since=weekly', function(cssResult) {                 
-                 cssTrends = cssResult.slice(0,5);
+                );
+                $('#jsTrends').append(tableRow);
 
-                 cssTrends.forEach((trend) => {
-                     var tableRow = $(
-              `<tr class="trend-row">
+            })
+        })
+
+        $.getJSON('https://github-trending-api.now.sh/repositories?language=css&since=weekly', function (cssResult) {
+            cssTrends = cssResult.slice(0, 5);
+
+            cssTrends.forEach((trend) => {
+                var tableRow = $(
+                    `<tr class="trend-row">
                   <td class="trend-name"><a href="${trend.url}" target="_blank"> ${trend.name}</a></td>
                   <td class="trend-author"><a href="https://github.com/${trend.author}" target="_blank">${trend.author}</a></td>
                   <td class="trend-stars">${trend.stars}</td>	
                   <td class="trend-stars-weekly">${trend.currentPeriodStars}</td>				
               </tr>`
-          );
-          $('#cssTrends').append(tableRow);
-                     
-                 
-     })})}
-    }   
+                );
+                $('#cssTrends').append(tableRow);
+
+            })
+        })
+    }
+}
 
 function contactForm() {
-    $('#nav-home').css('background-color', '')   
-    $('#nav-team').css('background-color', '');
-    $('#nav-portfolio').css('background-color', '');
-    $('#nav-contact').css('background-color', 'rgba(0, 0, 0, 0.123)');
+    $('#navPortfolio').attr('class', '');
+    $('#navHome').attr('class', '');
+    $('#navContact').attr('class', 'active');
+    $('#teamref').attr('class', '');
 
-    $('#teamref').attr('onclick', 'theTeam()');
+    $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
 
     $('#iframe-div').empty().append(`<div id="form">
-    <h1 id="form-title">Kontakta oss</h1>
+    <h1 id="form-title">Kontakta oss<hr/></h1>
     <form>
 
         <div class="row">
@@ -253,18 +258,17 @@ function contactForm() {
 </div>
 <div id="map"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsjoxCuIm512iS1klcnwE0b0kyoP7cwV8&callback=myMap"></script>
-`)}
+`
+    )
+}
 
+function home() {
+    $('#navPortfolio').attr('class', '');
+    $('#navHome').attr('class', 'active');
+    $('#navContact').attr('class', '');
+    $('#teamref').attr('class', '');
 
-function slideshow(){
-
-
-    $('#nav-home').css('background-color', 'rgba(0, 0, 0, 0.123)')    
-    $('#nav-team').css('background-color', '');
-    $('#nav-portfolio').css('background-color', '');
-    $('#nav-contact').css('background-color', '');
-
-    $('#teamref').attr('onclick', 'theTeam()');
+    $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
 
 
     setTimer();
@@ -299,15 +303,10 @@ function slideshow(){
     </div> 
     </div>   `
 
-)}
-
-function transform(x) {
-    console.log(x);
-    x.classList.toggle("transform");
+    )
 }
 
-
-function personalPagePontus(){
+function personalPagePontus() {
 
     $('#iframe-div').empty().append(`    <div class="card">
     <img src="images/pontus.jpg" alt="Pontus" style="width:100%">
@@ -401,10 +400,10 @@ function personalPagePontus(){
 
 </div>`
 
-)}
+    )
+}
 
-
-function personalPageJonte(){
+function personalPageJonte() {
 
     $('#iframe-div').empty().append(`<div class="card">
     <img src= "images/jonte.jpg" alt="Jonte" style="width:100%">
@@ -433,9 +432,10 @@ function personalPageJonte(){
 <button onclick="move()">Click me</button>
 </div> `
 
-)}
+    )
+}
 
-function personalPageJohan(){
+function personalPageJohan() {
 
     $('#iframe-div').empty().append(`<div class="card">
     <img src= "images/slide5.jpg" alt="Johan" style="width:100%">
@@ -464,10 +464,11 @@ function personalPageJohan(){
 <button onclick="move()">Click me</button>
 </div> `
 
-)}
+    )
+}
 
 
-function headSlide(){
+function headSlide() {
 
     setTimer();
 
@@ -486,4 +487,29 @@ function headSlide(){
         </div>
     </div> 
     </div>   `
-    )}
+    )
+}
+
+function goResponsive() {   
+    var elem = document.getElementById("topnav");
+    if (elem.className === "navbar") {
+        elem.className += " responsive";
+    } else {
+        elem.className = "navbar";
+    }
+    console.log('bajs');
+}
+
+$( document ).ready(function() {
+    
+    
+    $('#iframe-div').on('click', function(){      
+        $('#topnav').attr('class', 'navbar');
+    
+    }
+            
+    )})
+     
+   
+    
+   
