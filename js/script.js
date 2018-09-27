@@ -1,15 +1,17 @@
-function portfolio() {    
-    $('#nav-home').css('background-color', '')    
-    $('#nav-team').css('background-color', '');
-    $('#nav-portfolio').css('background-color', 'rgba(0, 0, 0, 0.123)');
-    $('#nav-contact').css('background-color', '');
-    
-    $('#teamref').attr('onclick', 'theTeam()');
+function portfolio() {
+    $('#navPortfolio').attr('class', 'active');
+    $('#navHome').attr('class', 'goResponsive()');
+    $('#navContact').attr('class', '');
+    $('#teamref').attr('class', '');
+
+    $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
+
 
     $('#iframe-div').empty().append(`
-   <h2 style="text-align:center">V&aring;ra senaste projekt</h2>   
-    <div class="projectDiv">
-        <div class="projectImg" id="project1">
+   <h1>Portfolio<hr/></h1>
+    <div class="projectDiv">    
+        <div class="projectImg">
+
             <img name="project1" src="images/project1.jpg" alt="">
             <a href="https://www.freepik.com/free-vector/circular-wave-logo-template_843660.htm" target="_blank">
                 <div class="tooltip" href="#">
@@ -22,7 +24,7 @@ function portfolio() {
         Beskrivande text som säger var och när vi utvecklat projektet. Det var igår, i parken. <hr />
     </div>
     <div class="projectDiv">
-        <div class="projectImg" id="project2">
+        <div class="projectImg">
             <img name="project2" src="images/project2.jpg" alt="">
             <a href="https://www.freepik.com/free-vector/logo-template-design_1063800.htm" target="_blank">
                 <div class="tooltip" href="#">
@@ -60,19 +62,20 @@ function portfolio() {
                </label></div>
         Beskrivande text som säger var och när vi utvecklat projektet. Det var igår, i parken. <hr />
     </div>
-</div>`)}
+</div>`)
+}
 
 function theTeam() {
-    $('#nav-home').css('background-color', '')    
-    $('#nav-team').css('background-color', 'rgba(0, 0, 0, 0.123)');
-    $('#nav-portfolio').css('background-color', '');
-    $('#nav-contact').css('background-color', '');
+    $('#navPortfolio').attr('class', '');
+    $('#navHome').attr('class', '');
+    $('#navContact').attr('class', '');
+    $('#teamref').attr('class', 'active');
 
-    $('#teamref').attr('onclick', '');
+    $('#teamref').attr('onclick', 'goResponsive()');
 
     $('#iframe-div').empty().append(`
-        <div class="col-12 viContainer">
-        <h2>Vilka är vi?</h2>
+    <h1>Vilka är vi?<hr/></h1>
+        <div class="col-12">    
 
         <div class="personContainerDiv">
             <div id="pontus" class="profileImgDiv">
@@ -80,7 +83,10 @@ function theTeam() {
                     <img src="images/pontus.jpg" alt="">
                 </a>
             </div>
-            <a href="#" onClick="personalPagePontus()">Pontus Törn</a>
+            <br/><a href="#" onClick="personalPagePontus()">Pontus Törn </a> <hr/>
+            <p class="personInfo">
+                +4673123456 <br/>
+                pontustorn@gmail.com</p>
         </div>
 
         <div class="personContainerDiv">
@@ -89,7 +95,10 @@ function theTeam() {
                     <img src="images/jonte.jpg" alt="">
                 </a>
             </div>
-            <a href="#" onClick="personalPageJonte()"> Jonathan Olsson</a>
+            <br/><a class="namn" href="#" onClick="personalPageJonte()"> Jonathan Olsson</a> <hr/>
+            <p class="personInfo">
+                +4673123456 <br/>
+                pontustorn@gmail.com</p>
         </div>
 
         <div class="personContainerDiv">
@@ -99,12 +108,15 @@ function theTeam() {
                 </a>
             </div>
 
-            <a href="#" onClick="personalPageJohan()"> Johan Dalén</a>
+            <br/><a href="#" onClick="personalPageJohan()"> Johan Dalén</a><hr/>
+            <p class="personInfo">
+                +4670689288 <br/>
+                xjodal22@gmail.com</p>
 
         </div>
     </div>
 
-    <div class="textAboutUs col-5">
+    <div class="textAboutUs col-6">
         <h2>Mellan Sarek och Padjelanta </h2>
         <p> Padjelanta är det höga landet som är vackert och mjukt. Sarek är brutalt och alpint, bäst därför att
             balansera på gränsen. Padjelanta ligger i norra Lappland med Sarek i öster och Sulitelma i väster. Om vi
@@ -118,12 +130,11 @@ function theTeam() {
         </p>
        
     </div>
+    <div id="table-mother" class="col-12">
+    <h1> Just nu fördjupar vi oss i </h1>
+    <div class="table-container">
     
-
-    
-    <div class="table-container col-12 row">
-    <h2> Vi fördjupar oss just nu inom: </h2>
-        <table id="jsTrends" class="trend-tables">
+       <table id="jsTrends" class="trend-tables">
             <tr>              
                 <h3>Trendande JavaScript-bibliotek</h3>
             </tr>
@@ -135,7 +146,7 @@ function theTeam() {
             </tr>
         </table>
     </div>
-    <div class="table-container col-12 row">
+    <div class="table-container">
         <table id="cssTrends" class="trend-tables">
             <tr>
                 <h3>Trendande CSS-bibliotek</h3>
@@ -147,61 +158,63 @@ function theTeam() {
                 <th>Stars denna vecka</th>
             </tr>
         </table>
+    </div>
     </div>`)
-        var jsTrends = [];
-        var cssTrends = [];    
+    var jsTrends = [];
+    var cssTrends = [];
 
-            if(jsTrends && cssTrends.length == 0){
-                
-            
-             $.getJSON('https://github-trending-api.now.sh/repositories?language=javascript&since=weekly', function(jsResult) {                             
-                 jsTrends = jsResult.slice(0,5);            
-                
-                jsTrends.forEach((trend) => {
-                            var tableRow = $(
-                     `<tr class="trend-row">
+    if (jsTrends && cssTrends.length == 0) {
+
+
+        $.getJSON('https://github-trending-api.now.sh/repositories?language=javascript&since=weekly', function (jsResult) {
+            jsTrends = jsResult.slice(0, 5);
+
+            jsTrends.forEach((trend) => {
+                var tableRow = $(
+                    `<tr class="trend-row">
                      <td class="trend-name"><a href="${trend.url}" target="_blank"> ${trend.name}</a></td>
                      <td class="trend-author"><a href="https://github.com/${trend.author}" target="_blank">${trend.author}</a></td>
                      <td class="trend-stars">${trend.stars}</td>	
                      <td class="trend-stars-weekly">${trend.currentPeriodStars}</td>					
                      </tr>`
-                 );                 
-                 $('#jsTrends').append(tableRow);
-                                  
-                 }) 
-             })
-     
-             $.getJSON('https://github-trending-api.now.sh/repositories?language=css&since=weekly', function(cssResult) {                 
-                 cssTrends = cssResult.slice(0,5);
+                );
+                $('#jsTrends').append(tableRow);
 
-                 cssTrends.forEach((trend) => {
-                     var tableRow = $(
-              `<tr class="trend-row">
+            })
+        })
+
+        $.getJSON('https://github-trending-api.now.sh/repositories?language=css&since=weekly', function (cssResult) {
+            cssTrends = cssResult.slice(0, 5);
+
+            cssTrends.forEach((trend) => {
+                var tableRow = $(
+                    `<tr class="trend-row">
                   <td class="trend-name"><a href="${trend.url}" target="_blank"> ${trend.name}</a></td>
                   <td class="trend-author"><a href="https://github.com/${trend.author}" target="_blank">${trend.author}</a></td>
                   <td class="trend-stars">${trend.stars}</td>	
                   <td class="trend-stars-weekly">${trend.currentPeriodStars}</td>				
               </tr>`
-          );
-          $('#cssTrends').append(tableRow);
-                     
-                 
-     })})}
-    }   
+                );
+                $('#cssTrends').append(tableRow);
+
+            })
+        })
+    }
+}
 
 function contactForm() {
-    $('#nav-home').css('background-color', '')   
-    $('#nav-team').css('background-color', '');
-    $('#nav-portfolio').css('background-color', '');
-    $('#nav-contact').css('background-color', 'rgba(0, 0, 0, 0.123)');
+    $('#navPortfolio').attr('class', '');
+    $('#navHome').attr('class', '');
+    $('#navContact').attr('class', 'active');
+    $('#teamref').attr('class', '');
 
-    $('#teamref').attr('onclick', 'theTeam()');
+    $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
 
     $('#iframe-div').empty().append(`<div id="form">
-    <h1 id="form-title">Kontakta oss</h1>
-    <form>
 
-        <div class="row">
+    <h1 id="form-title">Kontakta oss<hr/></h1>
+    
+
             <div id="name" class="col-4 ">
                 <label for="name-input">Namn</label>
                 <input type="text" id="name-input" placeholder="Skriv ditt namn här...">
@@ -210,61 +223,62 @@ function contactForm() {
             </div>
 
 
-            <div id="email" class="col-4 ">
-                <label for="email-input">Email</label>
-                <input type="text" id="email-input" placeholder="Skriv din email här...">
-                <span class="hidden" id="err-msg-email" style="color:red">
-                        Vänligen ange en korrekt Email</span>
-            </div>
 
-
-            <div id="tel" class="col-4 ">
-                <label for="tel-input">Mobiltelefonnummer</label>
-                <input type="text" id="tel-input" placeholder="Skriv ditt telefonnummer här...">
-                <span class="hidden" id="err-msg-tel" style="color:red">
-                        Vänligen ange ett korrekt mobiltelefonnummer</span>
-            </div>
-        </div>
+<div id="email" class="col-4 ">
+    <label for="email-input">Email</label>
+    <input type="text" id="email-input" placeholder="Skriv din email här...">
+    <span class="hidden" id="err-msg-email" style="color:red">
+            Vänligen ange en korrekt Email</span>
 </div>
+
+
+
+<div id="tel" class="col-4 ">
+    <label for="tel-input">Mobiltelefonnummer</label>
+    <input type="text" id="tel-input" placeholder="Skriv ditt telefonnummer här...">
+    <span class="hidden" id="err-msg-tel" style="color:red">
+            Vänligen ange ett korrekt mobiltelefonnummer</span>
+</div>
+
 
 <div id="err-modal">
-    <div id="modal-content">
-        <span id="close">&times;</span>
-        <p id="message"></p>
-    </div>
+<div id="modal-content">
+<span id="close">&times;</span>
+<p id="message"></p>
+</div>
 </div>
 
 
-    <div id="msg" class="col-3 row">
-        <label for="msg-input">Meddelande</label>
-        <textarea type="message" id="msg-input" placeholder="Skriv ditt meddelande här..."></textarea>
-       <span class="hidden" id="err-msg-msg" style="color:red">
-                Vänligen lämna ett meddelande</span>
+<div id="msg" class="col-3 row">
+<label for="msg-input">Meddelande</label>
+<textarea type="message" id="msg-input" placeholder="Skriv ditt meddelande här..."></textarea>
+<span class="hidden" id="err-msg-msg" style="color:red">
+    Vänligen lämna ett meddelande</span>
 
-        <input type="button" value="Skicka" id="btn">
-    </div>
-
-
-
-
-
-</form>
-
+<input type="button" value="Skicka" id="btn">
 </div>
-<div id="map"></div>
+
+
+    <div id="map" class="col-6"></div>
+</div>
+
+
+
+<div id="map" class="col-6"></div>
+</div>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsjoxCuIm512iS1klcnwE0b0kyoP7cwV8&callback=myMap"></script>
-`)}
+`
+ )
+}
 
+function home() {
+    $('#navPortfolio').attr('class', '');
+    $('#navHome').attr('class', 'active');
+    $('#navContact').attr('class', '');
+    $('#teamref').attr('class', '');
 
-function slideshow(){
-
-
-    $('#nav-home').css('background-color', 'rgba(0, 0, 0, 0.123)')    
-    $('#nav-team').css('background-color', '');
-    $('#nav-portfolio').css('background-color', '');
-    $('#nav-contact').css('background-color', '');
-
-    $('#teamref').attr('onclick', 'theTeam()');
+    $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
 
 
     setTimer();
@@ -299,15 +313,10 @@ function slideshow(){
     </div> 
     </div>   `
 
-)}
-
-function transform(x) {
-    console.log(x);
-    x.classList.toggle("transform");
+    )
 }
 
-
-function personalPagePontus(){
+function personalPagePontus() {
 
     $('#iframe-div').empty().append(`    
     
@@ -457,10 +466,10 @@ function personalPagePontus(){
     </div>
 </div>`
 
-)}
+    )
+}
 
-
-function personalPageJonte(){
+function personalPageJonte() {
 
     $('#iframe-div').empty().append(`    
     
@@ -491,10 +500,21 @@ function personalPageJonte(){
     </div>
 
 
+
 </div>
 <div class="card2">
         <img src="images/aboutme.png" alt="aboutme" style="width:100%">
         <h1>Jonathan Olsson</h1>
+
+    )
+}
+
+function personalPageJohan() {
+
+    $('#iframe-div').empty().append(`<div class="card">
+    <img src= "images/slide5.jpg" alt="Johan" style="width:100%">
+    <h1>Pontus Törn</h1>
+
     <p class="title">Student</p>
     <p>Örebro Universitet</p>
        
@@ -759,10 +779,11 @@ function personalPageJohan(){
     </div>
 </div>`
 
-)}
+    )
+}
 
 
-function headSlide(){
+function headSlide() {
 
     setTimer();
 
@@ -781,4 +802,29 @@ function headSlide(){
         </div>
     </div> 
     </div>   `
-    )}
+    )
+}
+
+function goResponsive() {   
+    var elem = document.getElementById("topnav");
+    if (elem.className === "navbar") {
+        elem.className += " responsive";
+    } else {
+        elem.className = "navbar";
+    }
+    console.log('bajs');
+}
+
+$( document ).ready(function() {
+    
+    
+    $('#iframe-div').on('click', function(){      
+        $('#topnav').attr('class', 'navbar');
+    
+    }
+            
+    )})
+     
+   
+    
+   

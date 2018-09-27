@@ -2,12 +2,26 @@ var nameCheck
 var emailCheck
 var telCheck
 var msgCheck
+
+
+
 function test() {
+ var nameVal = $('#name-input').val();
+ var emailVal = $('#email-input').val();
+ var telVal = $('#tel-input').val();
+  
+ if(!nameVal || !emailVal || !telVal){
+  $('#name-input').val(""+localStorage.getItem("name")+"");
+  $('#email-input').val(""+localStorage.getItem("email")+"");
+  $('#tel-input').val(""+localStorage.getItem("tel")+""); }
+  
   //Realtime regex check f�r namn
   $('#name-input').on('keypress keydown keyup focus', function () {
     var validation = /^([A-Za-zåäö ]|Å|Ä|Ö){3,}$/g;
     var name = $(this).val();
     var validationResult = validation.test(name);
+
+    localStorage.setItem("name", ""+$('#name-input').val()+"");
 
     errorMessage(validationResult, "-name");
   });
@@ -18,6 +32,8 @@ function test() {
     var tel = $(this).val();
     var validationResult = validation.test(tel);
 
+    localStorage.setItem("tel", ""+$('#tel-input').val()+"");
+
     errorMessage(validationResult, "-tel");
   });
 
@@ -26,6 +42,8 @@ function test() {
     var validation = /^(?!.*\.\.)(^[^\.][^@\s]+@[^@\s]+\.[^@\s\.]+$)/g;
     var email = $(this).val();
     var validationResult = validation.test(email);
+
+    localStorage.setItem("email", ""+$('#email-input').val()+"");
 
     errorMessage(validationResult, "-email");
   });
@@ -50,6 +68,15 @@ function test() {
 
   $('#btn').on('click', function () {
     if (nameCheck === true && telCheck === true && msgCheck === true && emailCheck === true) {
+      
+      
+      
+      
+
+
+
+
+
       $('#name-input, #email-input, #tel-input, #msg-input').val('');
 
 
@@ -66,6 +93,7 @@ function test() {
         errorMessage(false, "-email");
         $('#err-msg-name, #err-msg-email, #err-msg-tel, #err-msg-msg').addClass('hidden');
 
+    
       
      } else {
 

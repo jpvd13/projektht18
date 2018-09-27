@@ -25,34 +25,21 @@
    
 </head>
 
-<body id="index-body" onload="slideshow()">
-    <div id="main">
-        <div id="head">
-           <div id="navicon" onclick="transform(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>     
-            <a class="navlink" href="index.html">The Pack's Portfolio</a>
-            <div id="quote">Where no one is stronger than the weakest</div>
-            
-        </div>
-
-        <div class="nav">
-            <li id="nav-home" class = "nav-list">
-                <a class="navlink" href="#" onclick="slideshow()"> Hem </a>
-            </li>
-            <li id="nav-team" class = "nav-list">
-                <a id="teamref" class="navlink" href="#" onclick="theTeam()"> Vilka &auml;r vi? </a>
-            </li>
-            <li id="nav-portfolio" class = "nav-list">
-                <a class="navlink" href="#" onclick="portfolio()"> Portfolio </a>
-            </li>
-            <li id="nav-contact" class = "nav-list">
-                <a class="navlink" href="#" onclick="contactForm(), test()"> Kontakt </a>
-            </li>
-
-        </div>
+<body id="index-body" onload="home()">
+        <div id="main">
+                <div id="head">    
+                    <a class="headlink" href="index.html">The Pack's Portfolio</a>
+                    <div id="quote">Where no one is stronger than the weakest</div>
+                    
+                </div>        
+                <div class="navbar" id="topnav">
+                        <a id="navHome" class="active" href="#" onclick="home(), goResponsive()"> Hem </a>
+                        <a id="teamref" class="" href="#" onclick="theTeam(), goResponsive()"> Vilka &auml;r vi? </a>
+                        <a id="navPortfolio" class="" href="#" onclick="portfolio(), goResponsive()"> Portfolio </a>
+                        <a id="navContact" class="" href="#" onclick="contactForm(), goResponsive(), test()"> Kontakt </a>
+                        
+                        <a href="javascript:void(0);" style="font-size:15px;" class="nav-icon" onclick="goResponsive()">&#9776;</a>
+                      </div>               
         <div id="container">
             <div id="iframe-div">
 
