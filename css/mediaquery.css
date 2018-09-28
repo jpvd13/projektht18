@@ -107,6 +107,11 @@ larger than 1200px (large devices)
     .modal-content{
         width: 90% !important;
     }
+
+    
+    #map {
+        margin-top: 4% !important;
+    }
     /**/
 
     /* portfolio */
@@ -162,6 +167,10 @@ larger than 1200px (large devices)
             object-fit: none !important;        
         }
         
+    #headquarters-map {
+        height: 350px !important;
+        margin-bottom: 50px;
+    }
         
     .personInfo {
             font-size: 10px !important;
@@ -191,9 +200,8 @@ larger than 1200px (large devices)
         }
 
 
-    #map {
-        margin-top: 4% !important;
-    }
+
+  
 
 
 }

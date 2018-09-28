@@ -11,11 +11,29 @@
 
 #rightSide{
     width: 55%;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);
     position: relative;
     padding: 1%;
     float: right;
     margin-left: 5%;
+}
+
+#aboutUs{
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);
+        padding: 1%;
+        margin-left: 5%; 
+}
+
+#headquarters-map{
+    margin-left: 5%;
+    height: 550px;
+}
+
+#headquartersDiv {
+    margin-top: 15%;
+}
+
+#headquartersDiv > h2 {
+    text-align: center;
 }
 
 .personContainerDiv{
