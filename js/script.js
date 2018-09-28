@@ -14,7 +14,7 @@ function portfolio() {
 
             <img name="project1" src="images/project1.jpg" alt="">
             <a href="https://www.freepik.com/free-vector/circular-wave-logo-template_843660.htm" target="_blank">
-                <div class="tooltip" href="#">
+                <div class="tooltip">
                     Visa projekt
                 </div>
             </a>
@@ -27,7 +27,7 @@ function portfolio() {
         <div class="projectImg">
             <img name="project2" src="images/project2.jpg" alt="">
             <a href="https://www.freepik.com/free-vector/logo-template-design_1063800.htm" target="_blank">
-                <div class="tooltip" href="#">
+                <div class="tooltip">
                     Visa projekt
                 </div>
             </a>
@@ -40,7 +40,7 @@ function portfolio() {
         <div class="projectImg">
             <img name="project3" src="images/project3.jpg" alt="">
             <a href="https://www.freepik.com/free-vector/technological-logo-design_1187936.htm" target="_blank">
-                <div class="tooltip" href="#">
+                <div class="tooltip">
                     Visa projekt
                 </div>
             </a>
@@ -291,6 +291,27 @@ function home() {
 
     $('#iframe-div').empty().append(`
 
+    
+    <div id="slideshow-container">
+    <div id="slideshow">
+        <div id="img-container">
+               
+            <a href="#" onclick="resizeImg()"> <img id="imgSlideshow" src="images/animal-attack.jpg"> </a>
+            <div id="overlay-mother">
+                <div id="prev" class="overlayControls">
+                <a href="#" id="prevBtn" class="slideControls" onclick="previousImage()">&lt;</a>
+            </div>
+            <div id="play-pause" class="overlayControls">
+                <a href="#" id="startCycle" class="slideControls" onclick="setTimer()">&#10074;&#10074;</a>
+            </div>
+            <div id="next" class="overlayControls">
+                <a href="#" id="nextBtn" class="slideControls" onclick="nextImage()">&gt;</a>
+            </div>
+            </div>
+           
+        </div>
+    </div> 
+    </div>
     <div class="indexText">
     <h2>Välkommen till The Pack's Portfolio </h2>
     <p> <b>The Law for the Wolves</b>
@@ -302,22 +323,7 @@ function home() {
     <b>For the strength of the pack is the wolf, and the strength of the wolf is the pack.</b>	
     
    
-    </p> </div>
-
-    <div id="slideshow-container">
-    <div id="slideshow">
-        <div>
-               
-              <img name="slide" id="imgSlideshow" src="images/animal-attack.jpg">
-              <label id="imgDesc">Scolding</label>
-              <div id="button" class="col-12">
-                        <a href="#" id="prevBtn" class="slideControls" onclick="previousImage()">&lt;</a>
-                        <a href="#" id="startCycle" class="slideControls" onclick="setTimer()">&#x25B6;/&#10074;&#10074;</a>
-                        <a href="#" id="nextBtn" class="slideControls" onclick="nextImage()">&gt;</a>
-                      </div>
-        </div>
-    </div> 
-    </div>   `
+    </p> </div>`
 
     )
 }
@@ -838,13 +844,13 @@ function goResponsive() {
 
 $( document ).ready(function() {
     
-    
     $('#iframe-div').on('click', function(){      
         $('#topnav').attr('class', 'navbar');
     
-    }
-            
-    )})
+    })
+
+    
+})
      
    
     

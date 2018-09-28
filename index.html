@@ -16,39 +16,40 @@
 
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/slideshow.js"></script>
     <script type="text/javascript" src="js/portfolio.js"></script>
     <script type="text/javascript" src="js/trending.js"></script>
     <script type="text/javascript" src="js/contactform.js"></script>
     <script type="text/javascript" src="js/personalPontus.js"></script>
-   
+
 </head>
 
 <body id="index-body" onload="home()">
-        <div id="main">
-                <div id="head">    
-                    <a class="headlink" href="index.html">The Pack's Portfolio</a>
-                    <div id="quote">Where no one is stronger than the weakest</div>
-                    
-                </div>        
-                <div class="navbar" id="topnav">
-                        <a id="navHome" class="active" href="#" onclick="home(), goResponsive()"> Hem </a>
-                        <a id="teamref" class="" href="#" onclick="theTeam(), goResponsive()"> Vilka &auml;r vi? </a>
-                        <a id="navPortfolio" class="" href="#" onclick="portfolio(), goResponsive()"> Portfolio </a>
-                        <a id="navContact" class="" href="#" onclick="contactForm(), whenLoaded(), goResponsive()"> Kontakt </a>
+    <div id="main">
+        <div id="head">
+            <a class="headlink" href="index.html">The Pack's Portfolio</a>
+            <div id="quote">Where no one is stronger than the weakest</div>
+
+        </div>
+        <div class="navbar" id="topnav">
+            <a id="navHome" class="active" href="#" onclick="home(), goResponsive(), setTimer()"> Hem </a>
+            <a id="teamref" class="" href="#" onclick="theTeam(), goResponsive()"> Vilka &auml;r vi? </a>
+            <a id="navPortfolio" class="" href="#" onclick="portfolio(), goResponsive()"> Portfolio </a>
+            <a id="navContact" class="" href="#" onclick="contactForm(), whenLoaded(), goResponsive()"> Kontakt </a>
 
 
-                        
-                        <a href="javascript:void(0);" style="font-size:15px;" class="nav-icon" onclick="goResponsive()">&#9776;</a>
-                      </div>               
+
+            <a href="javascript:void(0);" style="font-size:15px;" class="nav-icon" onclick="goResponsive()">&#9776;</a>
+        </div>
         <div id="container">
             <div id="iframe-div">
 
             </div>
         </div>
     </div>
-    
+
 </body>
 
 </html>

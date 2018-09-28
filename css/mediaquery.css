@@ -17,7 +17,9 @@ larger than 1200px (large devices)
         margin-left: 0 !important;
         padding-top: 0 !important;
         margin-bottom: 15%;
-        
+    }
+    #next{
+        margin-left: 95% !important;
     }
 }
 
@@ -30,6 +32,10 @@ larger than 1200px (large devices)
 
     #main{
         width: 100% !important;
+    }
+
+    #next{
+        margin-left: 96% !important;
     }
     
 }
@@ -61,6 +67,12 @@ larger than 1200px (large devices)
       text-align: left;
     }
 }
+
+ @media only screen and (max-width: 360px){
+    #next{
+        margin-left: 93% !important;
+    }
+ }
 
 /* Surfplattor och mobiler påverkas av koden nedanför */
 @media only screen and (max-width: 768px) {
@@ -108,8 +120,12 @@ larger than 1200px (large devices)
 
     /* homepage */
     #slideshow{
-        width: 90% !important;
+        width: 100% !important;
     }   
+
+    #next{
+        margin-left: 90% !important;
+    }
 
     .indexText {
         width: 90% !important;

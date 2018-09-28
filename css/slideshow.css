@@ -1,33 +1,95 @@
-
+#slideshow-container{
+    height: auto;
+    width: 100%;
+    position: relative;
+}
 
 #slideshow { 
-    margin: 10px auto; 
     position: relative; 
     text-align: center;
-    width: 80%;
-
-
+    width: 100%;
 }
 
-#slideshow > div { 
+#img-container{ 
     position: relative; 
-    height: 400px;
-      
+    height: 100px;      
 }
 
-#slideshow > div > img {
-  width: 100%;
-  height: 100%;
-  border: 2px solid white;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); 
-  object-fit: cover;
+
+
+#imgSlideshow {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); 
+    object-fit: cover;
+
 }
+
+/*
 #button {
   text-align: center;
+  border: 1px solid red;
+  display: block;
+}*/
+.overlayControls{
+    color: white;
+    background-image: rgba(0, 0, 0, 0.103);
+    display: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding: 10px;
+    top: 50%;
+    right: 0%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+     
+}
+
+.overlayControls:hover{
+    opacity: 1 !important;
+}
+
+
+#img-container:hover .overlayControls{
+    display: inline-block;
+}
+
+#img-container:hover .overlayControls > a{
+    font-size: 50px;
+    opacity: 0.4;
+    color: white;
+}
+
+#img-container:hover .overlayControls > a:hover{
+    text-decoration: none;
+    color: white;
+    opacity: 1;
+}
+
+#prev{
+    margin-left: 2.5%;    
+    position: absolute;
+    width: 5%;
+}
+
+#play-pause{
+    margin-left: 47.5%;
+    position: absolute;
+    width: 5%;
+}
+
+#next{
+    margin-left: 97.5%;
+    position: absolute;
+    width: 5%;
 }
 
 
 
+
+
+
+/*
 .slideControls{
     font-style: bold;
     text-decoration: none;
@@ -40,18 +102,15 @@
 #prevBtn{font-size: 40px}
 #nextBtn{font-size: 40px}
 
-#slideshow-container{
-    height: auto;
-    width: 100%;
-    position: relative;
-}
+*/
+
 
 .indexText {
     border: 2px solid rgb(255, 255, 255);
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);
-    position: relative;
     margin-left: 20%;
     margin-top: 1%;
     margin-right: 20%;
     padding: 15px;
+    display: block;
 }
