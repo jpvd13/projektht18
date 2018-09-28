@@ -323,6 +323,7 @@ function home() {
 }
 
 function personalPagePontus() {
+    $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
 
     $('#iframe-div').empty().append(`    
     
@@ -476,6 +477,7 @@ function personalPagePontus() {
 }
 
 function personalPageJonte() {
+    $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
 
     $('#iframe-div').empty().append(`    
     
@@ -516,6 +518,8 @@ function personalPageJonte() {
 }
 
 function personalPageJohan() {
+    $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
+
     $('#iframe-div').empty().append(`
     <div class="card">
 
@@ -789,11 +793,9 @@ function personalPageJohan(){
     )
 }
 
-
+/* Används inte? 
 function headSlide() {
-
     setTimer();
-
     $('#head').empty().append(`
     <div id="slideshow-container">
     <div id="slideshow">
@@ -811,8 +813,20 @@ function headSlide() {
     </div>   `
     )
 }
+ */
 
 function goResponsive() {   
+
+    /* får det inte att funka med jQuery
+    var ele = $('#topnav');
+    if (ele.attr('class').indexOf("navbar") != -1){
+        ele.attr('class', 'responsive')
+        console.log(ele.attr('class'));
+    }   else{
+        ele.attr('class', 'navbar');
+        console.log(ele.attr('class'));
+    }
+*/ 
     var elem = document.getElementById("topnav");
     if (elem.className === "navbar") {
         elem.className += " responsive";
