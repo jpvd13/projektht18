@@ -123,13 +123,19 @@ function whenLoaded() {
   })}
   
   function myMap() {
+    
+    
     var mapProp= {
         center:new google.maps.LatLng(39.027877, 125.776536),
         zoom:18,
         mapTypeId: google.maps.MapTypeId.HYBRID
-    };
+    } 
+   
     var map=new google.maps.Map(document.getElementById("map"),mapProp);
-    }
+
+    
+}
+ 
   
     function fixName(){
   errorMessage(name-boolean, '-name');

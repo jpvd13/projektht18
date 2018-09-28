@@ -1,3 +1,4 @@
+
 function portfolio() {
     $('#navPortfolio').attr('class', 'active');
     $('#navHome').attr('class', 'goResponsive()');
@@ -65,13 +66,14 @@ function portfolio() {
 </div>`)
 }
 
-function theTeam() {
+function theTeam() {    
     $('#navPortfolio').attr('class', '');
     $('#navHome').attr('class', '');
     $('#navContact').attr('class', '');
     $('#teamref').attr('class', 'active');
-
+    
     $('#teamref').attr('onclick', 'goResponsive()');
+
 
 
     $('#iframe-div').empty().append(`
@@ -123,6 +125,7 @@ function theTeam() {
         </div>
 
     <div id="rightSide">
+    <div id ="aboutUs">
         <h2>Lite kort om oss</h2>
         <p> Padjelanta är det höga landet som är vackert och mjukt. Sarek är brutalt och alpint, bäst därför att
             balansera på gränsen. Padjelanta ligger i norra Lappland med Sarek i öster och Sulitelma i väster. Om vi
@@ -135,6 +138,13 @@ function theTeam() {
             höga bergen, brusande forsar och snötäckta bergssidor.
         </p>
         </div>
+        <div id="headquartersDiv">
+        <h2>Vårat högkvarter</h3>
+        <div id ="headquarters-map"></div>
+        </div>
+        </div>
+        
+        
     </div>
     <div id="table-mother" class="col-12">
     <h1> Just nu fördjupar vi oss i </h1>
@@ -165,8 +175,12 @@ function theTeam() {
             </tr>
         </table>
     </div>
-    </div>`)
+    </div>
+   
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsjoxCuIm512iS1klcnwE0b0kyoP7cwV8&callback=myMapp"></script>
 
+    `)
 
 
     var jsTrends = [];
@@ -216,11 +230,10 @@ function contactForm() {
     $('#navHome').attr('class', '');
     $('#navContact').attr('class', 'active');
     $('#teamref').attr('class', '');
-
+    
     $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
 
     $('#iframe-div').empty().append(`
-
     <h1 id="form-title">Kontakta oss<hr/></h1>
     
 
@@ -523,132 +536,8 @@ function personalPageJonte() {
     )
 }
 
-function personalPageJohan() {
-    $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
-
-    $('#iframe-div').empty().append(`
-    <div class="card">
-
-    <img src= "images/slide5.jpg" alt="Johan" style="width:100%">
-    <h1>Pontus Törn</h1>
-
-    <p class="title">Student</p>
-    <p>Örebro Universitet</p>
-       
-        <p class="infoText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit et est ac finibus. Suspendisse auctor sagittis placerat. Donec non nisi nunc. Praesent vulputate dolor at ante condimentum malesuada. Maecenas euismod tincidunt est, eu cursus ligula malesuada tincidunt. Morbi id blandit velit. Sed diam dui, egestas sit amet rutrum ut, suscipit in odio.
-
-                Etiam vehicula venenatis tellus. Aliquam vitae venenatis tortor. Aenean non auctor tellus. Suspendisse vulputate ut mauris a dictum. Nulla at tincidunt urna. Integer non quam ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sit amet erat eu tellus euismod semper at vel urna. Fusce leo erat, ultrices a interdum quis, semper a ante. Donec vitae lacinia velit. Quisque sed velit nec turpis rhoncus sollicitudin.
-                
-                </p>
- 
-    
-    </div>
-    <div class="card3">
-            <img src="images/projects.png" alt="projects" style="width:100%">
-            <div class="projectDiv">
-                    <div class="projectImg">
-                        <img src="images/project2.jpg" alt="">
-                        <a href="https://www.freepik.com/free-vector/logo-template-design_1063800.htm" target="_blank">
-                            <div class="tooltip" href="#">
-                                Visa projekt
-                            </div>
-                        </a>
-                    </div>
-     
-        
-        </div>
-        <div class="projectDiv">
-                <div class="projectImg">
-                    <img src="images/project3.jpg" alt="">
-                    <a href="https://www.freepik.com/free-vector/technological-logo-design_1187936.htm" target="_blank">
-                        <div class="tooltip" href="#">
-                            Visa projekt
-                        </div>
-                    </a>
-                </div>
- 
-    
-    </div>
-    <div class="projectDiv">
-            <div class="projectImg">
-                <img src="images/project1.jpg" alt="">
-                <a href="https://www.freepik.com/free-vector/circular-wave-logo-template_843660.htm" target="_blank">
-                    <div class="tooltip" href="#">
-                        Visa projekt
-                    </div>
-                </a>
-            </div>
-
-
-</div>
-<div class="projectDiv">
-        <div class="projectImg">
-            <img src="images/project2.jpg" alt="">
-            <a href="https://www.freepik.com/free-vector/logo-template-design_1063800.htm" target="_blank">
-                <div class="tooltip" href="#">
-                    Visa projekt
-                </div>
-            </a>
-        </div>
-
-
-</div>
-</div>
-<div class="card4"> 
-        
-        <img src="images/contactme.png" alt="contactme" style="width:100%" onclick="contactForm(), test()">
-        <div class="projectDiv">
-                <a href="https://www.facebook.com/jonathan.olsson.503" target="_blank" class="contactImg">
-                    <img src="images/facebook.png" alt="">
-                    
-                    </a>
-                </div>
- 
-    
-    <div class="projectDiv">
-            <a href="https://linkedin.com" target="_blank" class="contactImg">
-                <img src="images/linkedin.png" alt="">
-                
-                </a>
-            </div>
-
-
-
-<div class="projectDiv">
-        <a href="https://twitter.com" target="_blank" class="contactImg">
-            <img src="images/twitter.png" alt="">
-            
-            </a>
-        </div>
-
-
-
-<div class="projectDiv">
-    <a href="https://code.visualstudio.com/" target="_blank" class="contactImg">
-        <img src="images/visualstudio.png" alt="">
-        
-        </a>
-    </div>
-<div class="projectDiv">
-        <a href="https://outlook.live.com" target="_blank" class="contactImg">
-            <img src="images/mail.png" alt="">
-            </a>
-        </div>
-        <div class="projectDiv">
-        <a href="https://pornhub.com" target="_blank" class="contactImg">
-            <img src="images/pornhub.jpg" alt="">
-            </a>
-        </div>
-    
-          
-    
-    
-    </div>
-</div>`
-
-)}
-
 function personalPageJohan(){
+    $('#teamref').attr('onclick', 'theTeam(), goResponsive()');
     $('#iframe-div').empty().append(`    
     
     <div class="card">
@@ -799,28 +688,6 @@ function personalPageJohan(){
     )
 }
 
-/* Används inte? 
-function headSlide() {
-    setTimer();
-    $('#head').empty().append(`
-    <div id="slideshow-container">
-    <div id="slideshow">
-        <div>
-                <div id="button" class="col-12">
-                        <a href="#" id="prevBtn" class="slideControls" onclick="previousImage()">&lt;</a>
-                        <a href="#" id="startCycle" class="slideControls" onclick="setTimer()">&#x25B6;/&#10074;&#10074;</a>
-                        <a href="#" id="nextBtn" class="slideControls" onclick="nextImage()">&gt;</a>
-                      </div>
-              <img name="slide" id="imgSlideshow" src="images/slide1.jpg">
-              <label id="imgDesc">En sn&ouml;ig skog</label>
-             
-        </div>
-    </div> 
-    </div>   `
-    )
-}
- */
-
 function goResponsive() {   
 
     /* får det inte att funka med jQuery
@@ -842,12 +709,26 @@ function goResponsive() {
     
 }
 
+function myMapp() {
+    
+    var mapProp2= {
+        center:new google.maps.LatLng(-54.350106, -36.613196),
+        zoom:7,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    }
+
+    var map2=new google.maps.Map(document.getElementById("headquarters-map"),mapProp2);
+    
+}
+
+
 $( document ).ready(function() {
     
     $('#iframe-div').on('click', function(){      
         $('#topnav').attr('class', 'navbar');
     
     })
+
 
     
 })
