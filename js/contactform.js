@@ -3,35 +3,74 @@ var emailCheck
 var telCheck
 var msgCheck
 
+function clearStorage(){
+localStorage.clear(); }
+
+function empty(e) {
+  switch (e) {
+    case "":
+    case 0:
+    case "0":
+    case null:
+    case false:
+    case typeof this === "undefined":
+      return true;
+    default:
+      return false;
+  }
+}
+
+
 function whenLoaded() {
 
- var nameVal = $('#name-input').val();
- var emailVal = $('#email-input').val();
- var telVal = $('#tel-input').val();
+  var nameVal = $('#name-input').val();
+  var emailVal = $('#email-input').val();
+  var telVal = $('#tel-input').val();
+  
+  var storedContact = JSON.parse(localStorage.getItem('contact'));
+  console.log(storedContact);
 
+  if(!empty(storedContact)){
+  if (storedContact.name.length > 0) {
+    $('#name-input').val(''+storedContact.name+'');
+  } else {
+    $('#name-input').val("");
+  }
+
+  if (storedContact.email.length > 0){
+    var contactEmail = storedContact.email;  
+    $('#email-input').val(''+contactEmail+'');  
+  } else {
+    $('#email-input').val("");
+  }
+
+  if(storedContact.tel.length > 0){
+    var contactTel = storedContact.tel;
+    $('#tel-input').val(''+contactTel+'');
+  } else {
+    $('#tel-input').val("");
+  }
+}
 
  
-  if(nameVal == null){ $('#name-input').val(""); console.log("bajs")} 
-  else{$('#name-input').val(""+localStorage.getItem("name")+"")}
-
+  if(nameVal === 'null'){ $('#name-input').val("")} 
   var nameBoolean = localStorage.getItem("name-boolean");
   if(nameBoolean == "false"){$('#err-msg-name').removeClass('hidden')}
+ 
   
-
-
-  if(emailVal == null){ $('#email-input').val("")}
-  else{$('#email-input').val(""+localStorage.getItem("email")+"")}
-
+  if(emailVal === "null"){ $('#email-input').val("")}
   var emailBoolean = localStorage.getItem("email-boolean");
   if(emailBoolean == "false"){$('#err-msg-email').removeClass('hidden')}
 
-
   
-  if(telVal == null){$('#tel-input').val("")}
-  else{$('#tel-input').val(""+localStorage.getItem("tel")+"")}
-
+  if(telVal === "null"){$('#tel-input').val("")}
   var telBoolean = localStorage.getItem("tel-boolean");
   if(telBoolean == "false"){$('#err-msg-tel').removeClass('hidden')}
+
+
+  addToContact($('#name-input').val() , '-name');
+  addToContact($('#email-input').val() , '-email');
+  addToContact($('#tel-input').val() , '-tel');
 
 
   errorMessage(nameBoolean, '-name');
@@ -45,7 +84,9 @@ function whenLoaded() {
     var validationResult = validation.test(name).toString();
 
     localStorage.setItem("name", ""+$('#name-input').val()+"");
-    
+   
+    addToContact($('#name-input').val() , '-name');
+    store(contact);
     errorMessage(validationResult, "-name");
   });
 
@@ -56,7 +97,8 @@ function whenLoaded() {
     var validationResult = validation.test(tel).toString();
 
     localStorage.setItem("tel", ""+$('#tel-input').val()+"");
-
+    addToContact($('#tel-input').val() , '-tel');
+    store(contact);
     errorMessage(validationResult, "-tel");
   });
 
@@ -67,7 +109,8 @@ function whenLoaded() {
     var validationResult = validation.test(email).toString();
 
     localStorage.setItem("email", ""+$('#email-input').val()+"");
-
+    addToContact($('#email-input').val() , '-email');
+    store(contact);
     errorMessage(validationResult, "-email");
   });
 
@@ -108,36 +151,47 @@ function whenLoaded() {
         localStorage.setItem("name-boolean", "true");
         localStorage.setItem("email-boolean", "true");
         localStorage.setItem("tel-boolean", "true");
-      
-     } else {
 
+     } else {
+      
       $('#modal-content').css('background-color', 'lightcoral');
       $('#err-modal').css('display', 'block');
       $('#message').empty().append('Formuläret är inte korrekt ifyllt, försök igen.');
-
+      
         $('#err-modal').on('click', function(){
           $('#err-modal').css('display', 'none');
         })
     }
     
   })}
+
+  var contact = {
+    name:'',
+    email:'',
+    tel:''
+    };
+
+  function addToContact(input, textType){
+   
+    if (textType == ("-name")){contact.name = input}
+    if (textType == ("-email")){contact.email = input}
+    if (textType == ("-tel")){contact.tel = input}
+    
+  }
+
+  function store(input){
+    var inputToString = JSON.stringify(input);
+    localStorage.setItem('contact', ''+inputToString+'');
+  }
   
   function myMap() {
     var mapProp= {
         center:new google.maps.LatLng(39.027877, 125.776536),
         zoom:18,
         mapTypeId: google.maps.MapTypeId.HYBRID
-    };
-    var map=new google.maps.Map(document.getElementById("map"),mapProp);
-    }
-  
-    function fixName(){
-  errorMessage(name-boolean, '-name');
-  errorMessage(tel-boolean, '-tel');
-  errorMessage(email-boolean, '-email');  
-    }
-
-
+    }   
+    var map=new google.maps.Map(document.getElementById("map"),mapProp);  
+}
 
   function errorMessage(validationResult, textType) {
     if (validationResult === 'false') {
