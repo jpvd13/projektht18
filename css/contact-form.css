@@ -47,14 +47,8 @@ textarea[type=message]{
 #btn:active {
     background-color: #3e8e41;
     transform: translateY(4px);
-  }
-
-/* Ta bort pilar för att öka värdet i number-input (funkar med scroll) */
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
 }
+
 
 span{
     font-style: italic;
