@@ -88,14 +88,13 @@ larger than 1200px (large devices)
         margin-left: 5% !important;
         margin-right: 5% !important;
     }
-
-    span{
-        font-size: 14px !important;
-        font-style: italic;
-        margin-left: 5px;
+/*Valideringsikonen*/
+    #css-valid{
+        display: none !important;
     }
 
-    /* contact-form */
+
+/* contact-form */
     textarea[type=message]{
         width: 100% !important;
     }
@@ -112,18 +111,22 @@ larger than 1200px (large devices)
     #map {
         margin-top: 4% !important;
     }
-    /**/
 
-    /* portfolio */
+    /*Errormeddelande i contact-form*/
+    span{
+        font-size: 14px !important;
+        font-style: italic;
+        margin-left: 5px;
+    }
+/**/
+/* portfolio och personliga sidan*/
     .projectDiv{
         width:90% !important; 
         margin-left: 5% !important;
         margin-right: 5% !important;
     } 
-    /**/
-
-
-    /* homepage */
+/**/
+/* homepage */
     #slideshow{
         width: 100% !important;
     }   
@@ -138,17 +141,11 @@ larger than 1200px (large devices)
         padding: 10px; 
         font-size: 16px !important;
     } 
-    /**/
 
-
-
-/* Tror denna är borttagen
-    .nav-list > a {
-        font-size: 20px !important;
-        padding-right: 9px;
-    }   
-*/    
-
+    projectImg{
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507) !important;
+    }
+/**/  
 /* "the team */
 
     #leftSide{
@@ -198,7 +195,19 @@ larger than 1200px (large devices)
     .trend-tables{
             width:100% !important;
         }
+/**/
+/* Personliga sidan */
+div > .card, .card2, .card3, .card4{
+    max-width: 100% !important;
+    width: 100%;
+    margin-bottom: 5% !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.562);
+    border-right: 0px !important;
 
+}
+
+
+/**/
 
 
   

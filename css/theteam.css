@@ -26,10 +26,12 @@
 #headquarters-map{
     margin-left: 5%;
     height: 550px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);
 }
 
 #headquartersDiv {
     margin-top: 15%;
+    
 }
 
 #headquartersDiv > h2 {
@@ -61,7 +63,6 @@ div > .personText{
 div > .profileImgDiv{
     width: 180px;
     height: 250px;
-    border-radius: 10px;
     border: 2px solid white;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);   
 
@@ -71,11 +72,15 @@ div > .profileImgDiv{
 .profileImgDiv > a > img{
     width: 100%;
     height: 100%;
-    border-radius: 10px;
     object-fit: cover;
 }
 
 
+a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+ }
 
 tr > td > a {
     color: rgb(0, 0, 180);
@@ -93,40 +98,43 @@ td {
     width: 25%;
     padding: 10px;
 }
-th{
-    text-align: left;
-    padding: 10px;
-    background-color: rgb(142, 163, 184);
-}
 
-tr > .trend-table-titles{
+th{
    font-weight: bold;
    text-align: left;
+   text-align: left;
+    padding: 10px;
+    background-color: rgb(97, 205, 255);
 }
   
 tbody tr:nth-child(even){
-    background-color: rgb(164, 198, 255);
+    background-color: rgb(164, 198, 255) !important;
   }
 tbody tr:nth-child(odd){
-    background-color: rgb(198, 225, 255);
+    background-color: rgb(198, 225, 255) !important;
 }
 
-/* Modal för visa mer */
+.showMore tr:nth-child(even){
+    background-color: rgb(164, 198, 255) !important;
+  }
+.showMore tr:nth-child(odd){
+    background-color: rgb(198, 225, 255) !important;
+}
+
+
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); 
 }
-
-/* Modal Content */
 .modal-content {
     background-color: #fefefe;
     margin: auto;
@@ -135,7 +143,6 @@ tbody tr:nth-child(odd){
     width: 35%;
 }
 
-/* The Close Button */
 .close {
     color: #aaaaaa;
     float: right;
@@ -143,8 +150,7 @@ tbody tr:nth-child(odd){
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -152,10 +158,6 @@ tbody tr:nth-child(odd){
 
 .showMore {
     width: 100%;
-}
-
-.showMore > tr {    
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);
 }
 
 .showMore > tr > td{
@@ -172,9 +174,71 @@ table > tr > td > a > img{
     font-size: 16px;
     color: blue;
     text-align: left;
+    border: 0px;
+    cursor: pointer;
 }
 .visaBtn:hover{
     text-decoration: underline;
 }
-/**/
 
+.profileImgDiv{
+    width:100%;
+    height: 175px;
+    float:left;
+    position:relative;
+    border: 2px solid white;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.507);
+}
+
+.profileImgDiv > img {
+    object-fit: cover;
+    position: relative;
+    vertical-align: top;
+}
+
+.profileImgDiv:after {
+    content: '\A';
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+    opacity: 0;
+}
+    
+.profileImgDiv:hover:after{
+        opacity:1;
+}
+
+.profileImgDiv:hover .darkimg{
+    display:block;
+}
+    
+.darkimg{
+    position: absolute;
+    display: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 15px;        
+}
+
+.darkimg > p{
+    width: 40%;
+    margin:  60% auto;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+}
+
+.darkimg > p:hover{
+    color: darkgray;
+    border: 1px solid darkgray;
+}

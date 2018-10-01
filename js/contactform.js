@@ -20,7 +20,6 @@ function empty(e) {
   }
 }
 
-
 function whenLoaded() {
 
   var nameVal = $('#name-input').val();
@@ -28,8 +27,7 @@ function whenLoaded() {
   var telVal = $('#tel-input').val();
   
   var storedContact = JSON.parse(localStorage.getItem('contact'));
-  console.log(storedContact);
-
+console.log(storedContact);
   if(!empty(storedContact)){
   if (storedContact.name.length > 0) {
     $('#name-input').val(''+storedContact.name+'');
@@ -124,11 +122,6 @@ function whenLoaded() {
     errorMessage(validationResult, "-msg");
   });
 
-  //Ta bort errormeddelande vid onBlur
-  //$('#name-input, #email-input, #tel-input, #msg-input').on('blur', function(){
-  // $('span').removeClass().addClass('hidden');
-
-  //})
 
 
   $('#btn').on('click', function () {
