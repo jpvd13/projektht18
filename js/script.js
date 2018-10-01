@@ -161,7 +161,9 @@ function theTeam() {
                 <th>Stars denna vecka</th>
             </tr>
         </table>
+       
     </div>
+
     <div class="table-container">
         <table id="cssTrends" class="trend-tables">
             <tr>
@@ -223,6 +225,10 @@ function theTeam() {
             })
         })
     }
+
+ $('#contributors-modal').on('click', function(){
+    $('#contributors-modal').css('display', 'none');
+    }) 
 }
 
 function contactForm() {
