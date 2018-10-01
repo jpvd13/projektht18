@@ -77,6 +77,8 @@ function theTeam() {
     $('#iframe-div').empty().append(`
     <h1>Vilka är vi?<hr/></h1>
     <div id="theTeam-mother"> 
+    
+
         <div id="leftSide">
         <div class="personContainerDiv"> 
            <div id="pontus" class="profileImgDiv">
@@ -137,6 +139,19 @@ function theTeam() {
         </div>
     </div>
     <div id="table-mother" class="col-12">
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2> Top 6 Contributors </h2>
+    <table class="showMore">
+    
+    </table>
+  </div>
+
+</div>
     <h1> Just nu fördjupar vi oss i </h1>
     <div class="table-container">
     
@@ -149,8 +164,11 @@ function theTeam() {
                 <th>Författare</th>
                 <th>Stars</th>
                 <th>Stars denna vecka</th>
+                <th>Top contributors </th>
             </tr>
         </table>
+
+   
     </div>
     <div class="table-container">
         <table id="cssTrends" class="trend-tables">
@@ -162,6 +180,7 @@ function theTeam() {
                 <th>Författare</th>
                 <th>Stars</th>
                 <th>Stars denna vecka</th>
+                <th>Top contributors </th>
             </tr>
         </table>
     </div>
@@ -171,45 +190,74 @@ function theTeam() {
 
     var jsTrends = [];
     var cssTrends = [];
+    var moreJS = [];
 
-    if (jsTrends && cssTrends.length == 0) {
+  // Get the modal
+var modal = document.getElementById('myModal');
+
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 
         $.getJSON('https://github-trending-api.now.sh/repositories?language=javascript&since=weekly', function (jsResult) {
             jsTrends = jsResult.slice(0, 5);
-
+            var i = 0;
             jsTrends.forEach((trend) => {
+                
                 var tableRow = $(
-                    `<tr class="trend-row">
-                     <td class="trend-name"><a href="${trend.url}" target="_blank"> ${trend.name}</a></td>
+                    `<tr class="trend-row${i}">
+                     <td class="trend-name"><a href="${trend.url}" target="_blank">${trend.name}</a></td>
                      <td class="trend-author"><a href="https://github.com/${trend.author}" target="_blank">${trend.author}</a></td>
                      <td class="trend-stars">${trend.stars}</td>	
-                     <td class="trend-stars-weekly">${trend.currentPeriodStars}</td>					
+                     <td class="trend-stars-weekly">${trend.currentPeriodStars}</td>
+                     <td class="trend-more"><a href="javascript:void(0);"><button class="visaBtn" onclick="getMoreJS(${i})"> Visa </button></a></td>					
                      </tr>`
                 );
-                $('#jsTrends').append(tableRow);
-
+                $('#jsTrends').append(tableRow);     
+                i++;
             })
+
+        
         })
+
 
         $.getJSON('https://github-trending-api.now.sh/repositories?language=css&since=weekly', function (cssResult) {
             cssTrends = cssResult.slice(0, 5);
-
+            var i = 0;
             cssTrends.forEach((trend) => {
                 var tableRow = $(
-                    `<tr class="trend-row">
-                  <td class="trend-name"><a href="${trend.url}" target="_blank"> ${trend.name}</a></td>
+                    `<tr class="trend-row${i}">
+                  <td class="trend-name"><a href="${trend.url}" target="_blank">${trend.name}</a></td>
                   <td class="trend-author"><a href="https://github.com/${trend.author}" target="_blank">${trend.author}</a></td>
                   <td class="trend-stars">${trend.stars}</td>	
-                  <td class="trend-stars-weekly">${trend.currentPeriodStars}</td>				
+                  <td class="trend-stars-weekly">${trend.currentPeriodStars}</td>
+                  <td class="trend-more"><a href="javascript:void(0);"><button class="visaBtn" onclick="getMoreCSS(${i})"> Visa </button></a></td>				
               </tr>`
                 );
                 $('#cssTrends').append(tableRow);
-
+                i++;
             })
         })
-    }
+    
+
+
 }
+
 
 function contactForm() {
     $('#navPortfolio').attr('class', '');
@@ -849,9 +897,83 @@ $( document ).ready(function() {
     
     })
 
-    
 })
-     
-   
+  
+
+
+
+function getMoreJS(x){
+
+    $('#myModal').css('display', 'block');
+
+
+    var tableData = [];
+    for(var d = 0; d < 5; d++){
+    $(`#jsTrends .trend-row${d}`).each(function(index) {
+        tableData.push({ 
+            "author": $(this).find('td.trend-author').text(),
+            "name": $(this).find('td.trend-name').text()
+        })
+    });
+}
+ 
+ console.log(tableData);
+
+    $('.showMore').empty();
+
+    $.getJSON(`https://api.github.com/repos/${tableData[x].author}/${tableData[x].name}/contributors?per_page=6`, function (showMoreJS) {
+        moreJS = showMoreJS;
+        var i = 0;
+        moreJS.forEach((trend) => {
+            
+        console.log(moreJS);
+            var trMoreInfo = $(`<tr class="trend-row">
+            <td> <a href="https://github.com/${moreJS[i].login}"> ${moreJS[i].login} </a></td>
+            <td> <a href="#"> <img src="${moreJS[i].avatar_url}"> </a> </td>
+         </tr>`);
+        
+        
+            $('.showMore').append(trMoreInfo);
+            i++;
+        })
+    })
+}
+
+function getMoreCSS(x){
+
+    $('#myModal').css('display', 'block');
+
+
+    var tableData = [];
+    for(var d = 0; d < 5; d++){
+    $(`#cssTrends .trend-row${d}`).each(function(index) {
+        tableData.push({ 
+            "author": $(this).find('td.trend-author').text(),
+            "name": $(this).find('td.trend-name').text()
+        })
+    });
+}
+ 
+ console.log(tableData);
+
+    $('.showMore').empty();
+
+    $.getJSON(`https://api.github.com/repos/${tableData[x].author}/${tableData[x].name}/contributors?per_page=6`, function (showMoreJS) {
+        moreJS = showMoreJS;
+        var i = 0;
+        moreJS.forEach((trend) => {
+            
+        console.log(moreJS);
+            var trMoreInfo = $(`<tr class="trend-row"> 
+            <td> <a href="https://github.com/${moreJS[i].login}"> ${moreJS[i].login} </a></td>
+            <td> <a href="#"> <img src="${moreJS[i].avatar_url}"> </a> </td>
+         </tr>`);
+        
+        
+            $('.showMore').append(trMoreInfo);
+            i++;
+        })
+    })
+}
     
    
