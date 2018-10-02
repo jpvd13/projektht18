@@ -160,24 +160,23 @@ function theTeam() {
         
     </div>
     <div id="table-mother" class="col-12">
-<!-- The Modal -->
-<div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
+<div id="myModal" class="contributors-modal">
+
+  
+  <div class="contributors-modal-content">
     <table class="showMore">
     
     </table>
   </div>
 
 </div>
-    <h1> Just nu fördjupar vi oss i </h1>
+    <h1> Just nu fördjupar vi oss inom </h1>
     <div class="table-container">
     
        <table id="jsTrends" class="trend-tables">
             <tr>              
-                <h3>Trendande JavaScript-bibliotek</h3>
+                <h3>Trendande JavaScript-bibliotek på GitHub</h3>
             </tr>
             <tr class="trend-table-titles">
                 <th>Namn</th>
@@ -193,7 +192,7 @@ function theTeam() {
     <div class="table-container">
         <table id="cssTrends" class="trend-tables">
             <tr>
-                <h3>Trendande CSS-bibliotek</h3>
+                <h3>Trendande CSS-bibliotek på GitHub</h3>
             </tr>
             <tr class="trend-table-titles">
                 <th>Namn</th>
@@ -218,11 +217,7 @@ function theTeam() {
 
     var modal = document.getElementById('myModal');
 
-    var span = document.getElementsByClassName("close")[0];
-
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
+    
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
@@ -309,8 +304,8 @@ function contactForm() {
 
 
 <div id="err-modal">
-<div id="modal-content">
-<span id="close">&times;</span>
+<div id="contact-modal-content">
+<span id="close-contact-modal">&times;</span>
 <p id="message"></p>
 </div>
 </div>
@@ -634,7 +629,7 @@ function personalPageJonte() {
 <div class="card4"> 
         
         <img src="images/contactme.png" alt="contactme" style="width:100%" onclick="contactForm(), test()">
-        <div class="projectDiv">
+        <div class="contactDiv">
                 <a href="https://www.facebook.com/jonathan.olsson.503" target="_blank" class="contactImg">
                     <img src="images/facebook.png" alt="">
                     
@@ -642,7 +637,7 @@ function personalPageJonte() {
                 </div>
  
     
-    <div class="projectDiv">
+    <div class="contactDiv">
             <a href="https://www.linkedin.com/in/jonathan-olsson-451699136/" target="_blank" class="contactImg">
                 <img src="images/linkedin.png" alt="">
                 
@@ -651,7 +646,7 @@ function personalPageJonte() {
 
 
 
-<div class="projectDiv">
+<div class="contactDiv">
         <a href="https://twitter.com/jontemantheone" target="_blank" class="contactImg">
             <img src="images/twitter.png" alt="">
             
@@ -661,7 +656,7 @@ function personalPageJonte() {
 
 
 
-<div class="projectDiv">
+<div class="contactDiv">
         <a href="https://github.com/kebabmestarn" target="_blank" class="contactImg">
             <img src="images/github.png" alt="">
             </a>
@@ -773,15 +768,15 @@ function personalPageJohan() {
 <div class="card4"> 
         
         <img src="images/contactme.png" alt="contactme" style="width:100%" onclick="contactForm(), test()">
-        <div class="projectDiv">
-                <a href="https://www.pornhub.com/video/search?search=johan" target="_blank" class="contactImg">
+        <div class="contactDiv">
+                <a href="https://sv-se.facebook.com/" target="_blank" class="contactImg">
                     <img src="images/facebook.png" alt="">
                     
                     </a>
                 </div>
  
     
-    <div class="projectDiv">
+    <div class="contactDiv">
             <a href="https://linkedin.com" target="_blank" class="contactImg">
                 <img src="images/linkedin.png" alt="">
                 
@@ -790,7 +785,7 @@ function personalPageJohan() {
 
 
 
-<div class="projectDiv">
+<div class="contactDiv">
         <a href="https://twitter.com/jdal_1" target="_blank" class="contactImg">
             <img src="images/twitter.png" alt="">
             
@@ -800,7 +795,7 @@ function personalPageJohan() {
 
 
 
- <div class="projectDiv">
+ <div class="contactDiv">
         <a href="https://github.com/jpvd13" target="_blank" class="contactImg">
             <img src="images/github.png" alt="">
             </a>
@@ -864,7 +859,10 @@ function getMoreJS(x) {
     
 
     $('.showMore').empty().append(`
-    <tr><th class="contributors-header" colspan="3"> <h3> Top Contributors for <em>${tableData[x].name}</em> </h3></th> </tr>
+    <tr>
+        <th class="contributors-header" colspan="2"> <h4> Top Contributors for <em>${tableData[x].name}</em> </h4></th>
+        <th><span id="x-button" class="close-contributors-modal" onclick="closeContributors()">&times;</span></th> 
+    </tr>
     <tr class="trend-table-titles">
     <th class="contributors-header"> GitHub profile </th>
     <th class="contributors-header"> Contributions </th>
@@ -908,7 +906,10 @@ function getMoreCSS(x) {
     }
 
     $('.showMore').empty().append(`
-    <tr><th class="contributors-header" colspan="3"> <h3> Top Contributors for <em>${tableData[x].name}</em> </h3></th> </tr>
+    <tr>
+        <th class="contributors-header" colspan="2"> <h4> Top Contributors for <em>${tableData[x].name}</em> </h4></th> 
+        <th><span id="x-button" class="close-contributors-modal" onclick="closeContributors()">&times;</span></th> 
+    </tr>
     <tr class="trend-table-titles">
     <th class="contributors-header"> GitHub profile </th>
     <th class="contributors-header"> Contributions </th>
@@ -935,4 +936,11 @@ function getMoreCSS(x) {
     })
 }
 
+
+function closeContributors(){
+    
+    var modal = document.getElementById('myModal');
+    
+        modal.style.display = "none";
+    }
 

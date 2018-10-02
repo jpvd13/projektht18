@@ -128,7 +128,7 @@ console.log(storedContact);
     if (nameCheck === true && telCheck === true && msgCheck === true && emailCheck === true) {
 
       $('#msg-input').val('');
-      $('#modal-content').css('background-color', 'lightgreen');
+      $('#contact-modal-content').css('background-color', 'lightgreen');
       $('#err-modal').css('display', 'block');
       $('#message').empty().append('Meddelande skickat!');
        
@@ -147,7 +147,7 @@ console.log(storedContact);
 
      } else {
       
-      $('#modal-content').css('background-color', 'lightcoral');
+      $('#contact-modal-content').css('background-color', 'lightcoral');
       $('#err-modal').css('display', 'block');
       $('#message').empty().append('Formuläret är inte korrekt ifyllt, försök igen.');
       

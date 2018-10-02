@@ -100,11 +100,22 @@ td {
 }
 
 th{
-   font-weight: bold;
+   font-weight: normal;
    text-align: left;
    text-align: left;
     padding: 10px;
-    background-color: rgb(97, 205, 255);
+    background-color: rgb(49, 49, 49);
+    color: white;
+}
+
+h4 {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+h4 > em{
+    font-size: 18px;
+
 }
   
 tbody tr:nth-child(even){
@@ -123,7 +134,7 @@ tbody tr:nth-child(odd){
 
 
 
-.modal {
+.contributors-modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -135,23 +146,22 @@ tbody tr:nth-child(odd){
     overflow: auto;
     background-color: rgba(0,0,0,0.4); 
 }
-.modal-content {
-    background-color: #fefefe;
+
+.contributors-modal-content {
+    background-color: rgb(49, 49, 49);
     margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
     width: 35%;
 }
 
-.close {
-    color: #aaaaaa;
+.close-contributors-modal {
+    color: white;
     float: right;
-    font-size: 28px;
+    font-size: 34px;
     font-weight: bold;
 }
 
-.close:hover, .close:focus {
-    color: #000;
+.close-contributors-modal:hover, .close-contributors-modal:focus {
+    color: rgb(161, 161, 161);
     text-decoration: none;
     cursor: pointer;
 }

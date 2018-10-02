@@ -72,12 +72,12 @@ span{
 }
 
 
-#modal-content > p {
+#contact-modal-content > p {
     text-align: center;
     font-size: 24px;
 }
 
-#modal-content {
+#contact-modal-content {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -86,15 +86,15 @@ span{
 }
 
 
-#close {
-    color: #aaaaaa;
+#close-contact-modal {
+    color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-#close:hover,
-#close:focus {
+#close-contact-modal:hover,
+#close-contact-modal:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
